@@ -391,3 +391,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile: {fileID: 4782738162806092028, guid: 19bbd6531ca4c124da0056320bb14847, type: 3}
   heightScale: 0.25
+  clrMin: 0.4
+  mergeVal: 0.1
+  animTimeSec: 1.5
