@@ -28,6 +28,21 @@ public class MapGenerator : MonoBehaviour
     private Color treeNegClr = new Color(0.4f, 0.4f, 0.4f);
 
  
+
+    public void setTreeMap()
+    {
+        changeSource(1);
+    }
+    public void setHeightMap()
+    {
+        changeSource(0);
+    }
+    private void changeSource(int src)
+    {
+        currMap = src;
+        updateMap();
+    }
+
     public void updateMap()
     {
         if (currMap == 0)
@@ -50,6 +65,9 @@ public class MapGenerator : MonoBehaviour
             for (int y = 0; y < heightLst[x].L.Count; y++)
             {
                 Tile currTile = tileList[x][y];
+
+                currTile.posClr = clrPos;
+                currTile.negClr = clrNeg;
 
                 //Tile tileHandler = currTile.GetComponent<Tile>();
 
