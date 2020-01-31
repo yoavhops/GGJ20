@@ -19,6 +19,8 @@ public class GridManager : MonoBehaviour
     public HashSet<Vector2Int> Sources;
     public List<Vector2Int> WaterSources;
     public List<Vector2Int> MountainSources;
+
+    private MapGenerator mapGen;
     
     void Awake()
     {
@@ -56,6 +58,9 @@ public class GridManager : MonoBehaviour
             DiffuseFromUp();
             DiffuseFromDown();
         }
+
+        mapGen = GameObject.Find("/Map").GetComponent<MapGenerator>();
+        mapGen.setTiles(Grid, new Color(0.8f, 0.2f, 0.1f), new Color(0, 0, 1));
     }
 
     // Update is called once per frame
