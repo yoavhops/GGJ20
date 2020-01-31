@@ -7,6 +7,7 @@ using UnityEngine;
 [Serializable]
 public class Tree : DiffuseAble
 {
+    public static float GrowthRate = 0.01f;
 
     public Tree(List<Vector2Int> positiveSources, List<Vector2Int> negativeSources):
         base(positiveSources, negativeSources)
@@ -22,6 +23,11 @@ public class Tree : DiffuseAble
         }
 
         base.Diffuse(x, y);
+
+        if (Grid[x].L[y] > 0)
+        {
+            Grid[x].L[y] = Math.Min(Grid[x].L[y] + GrowthRate, 1);
+        }
     }
 
     protected IEnumerable<Vector2Int> GetNiePositions(int x, int y)

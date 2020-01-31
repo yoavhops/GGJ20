@@ -17,8 +17,8 @@ public class GridManager : MonoBehaviour
     public int Height = 100;
     public Dictionary<Type, DiffuseAble> TypeToDiffuse = new Dictionary<Type, DiffuseAble>();
     public List<DiffuseAble> DebugDiffuseAble = new List<DiffuseAble>();
-    public List<Vector2Int> WaterSources;
-    public List<Vector2Int> MountainSources;
+    public GameObject WaterSources;
+    public GameObject MountainSources;
     public List<Vector2Int> TreeSources;
     public List<Vector2Int> CitySources;
 
@@ -31,12 +31,20 @@ public class GridManager : MonoBehaviour
     void Awake()
     {
         Singleton = this;
-        TypeToDiffuse[typeof(Height)] = new Height(WaterSources, MountainSources);
+        TypeToDiffuse[typeof(Height)] = new Height(GetPositions(WaterSources).ToList(), GetPositions(MountainSources).ToList());
         DebugDiffuseAble.Add(TypeToDiffuse[typeof(Height)]);
         TypeToDiffuse[typeof(Tree)] = new Tree(CitySources, TreeSources);
         DebugDiffuseAble.Add(TypeToDiffuse[typeof(Tree)]);
     }
-    
+
+    private IEnumerable<Vector2Int> GetPositions(GameObject parant)
+    {
+        for (int i = 0 ; i < parant.transform.childCount; i++)
+        {
+            var child = parant.transform.GetChild(i);
+            yield return new Vector2Int(Mathf.RoundToInt(child.localPosition.x), Mathf.RoundToInt(child.localPosition.z));
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
