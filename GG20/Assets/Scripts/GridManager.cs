@@ -26,6 +26,8 @@ public class GridManager : MonoBehaviour
     public int StartIteration = 50;
     //public float DampFactor = 0.9f;
 
+    private MapGenerator mapGen;
+    
     void Awake()
     {
         Singleton = this;
@@ -43,6 +45,9 @@ public class GridManager : MonoBehaviour
         {
             TypeToDiffuse[typeof(Height)].FullDiffuse();
         }
+
+        mapGen = GameObject.Find("/Map").GetComponent<MapGenerator>();
+        mapGen.setTiles(Grid, new Color(0.8f, 0.2f, 0.1f), new Color(0, 0, 1));
     }
 
     // Update is called once per frame
