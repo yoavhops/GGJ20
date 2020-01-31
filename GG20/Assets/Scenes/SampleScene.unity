@@ -342,10 +342,10 @@ MonoBehaviour:
   Width: 100
   Height: 100
   DebugDiffuseAble: []
-  WaterSources:
-  - {x: 10, y: 10}
-  MountainSources:
-  - {x: 20, y: 20}
+  WaterSources: {fileID: 8653598414958289123, guid: f35deb580ba43af46984f83fce46a8ba,
+    type: 3}
+  MountainSources: {fileID: 1788489169036281854, guid: a0dffa4123221404c8bf1517daa57ffb,
+    type: 3}
   TreeSources: []
   CitySources: []
   StartIteration: 50
