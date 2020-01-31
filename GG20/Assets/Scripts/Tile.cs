@@ -26,14 +26,19 @@ public class Tile : MonoBehaviour
 
     private float mapHeight(float height)
     {
-        float logBase = 10;
-        float newHeight = Mathf.Log(Mathf.Abs(height) * (logBase - 1) + 1, logBase) * Mathf.Sign(height);
-        newHeight = (newHeight + Mathf.Log(Mathf.Abs(1) * (logBase - 1) + 1, logBase)) / 2;
+        //float logBase = 10;
+        //float newHeight = Mathf.Log(Mathf.Abs(height) * (logBase - 1) + 1, logBase) * Mathf.Sign(height);
+        //newHeight = (newHeight + Mathf.Log(Mathf.Abs(1) * (logBase - 1) + 1, logBase)) / 2;
+        //float newHeight = Mathf.Log(Mathf.Abs(height) * 1024, 2) / 10 * Mathf.Sign(height);
+
+        float newHeight = (1 - Mathf.Pow(1 - Mathf.Abs(height), 3)) * Mathf.Sign(height);
+        newHeight = (newHeight + 1) / 2;
 
         //float newHeight = Mathf.Pow(height, 3);
+        //float newHeight = height;
         newHeight *= heightScale;
 
-        if (newHeight == 0)
+        if (newHeight < 0.001f)
         {
             newHeight = 0.001f;
         }
@@ -50,6 +55,7 @@ public class Tile : MonoBehaviour
     private void setHeightNow(float height)
     {
         transform.localScale = new Vector3(1, mapHeight(height), 1);
+        //transform.localPosition = new Vector3(transform.localPosition.x, mapHeight(height), transform.localPosition.z);
         updateClrByHeight(height);
     }
 
