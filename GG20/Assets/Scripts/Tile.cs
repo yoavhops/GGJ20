@@ -9,6 +9,9 @@ public class Tile : MonoBehaviour
     private float prevHeight = 0;
     private float? targetHeight = null;
 
+    private float prevVal = 0;
+    private float? targetVal = null;
+
     public Color posClr, negClr;
 
     public float heightScale;
@@ -49,14 +52,32 @@ public class Tile : MonoBehaviour
     public void setHeight(float height)
     {
         timeSinceSet = 0;
+        if (targetHeight != null)
+        {
+            prevHeight = targetHeight.Value;
+        }
         targetHeight = height;
+    }
+
+    public void setVal(float val)
+    {
+        if (targetVal != null)
+        {
+            prevVal = targetVal.Value;
+        }
+        targetVal = val;
     }
 
     private void setHeightNow(float height)
     {
         transform.localScale = new Vector3(1, mapHeight(height), 1);
         //transform.localPosition = new Vector3(transform.localPosition.x, mapHeight(height), transform.localPosition.z);
-        updateClrByHeight(height);
+        //updateClrByHeight(height);
+    }
+
+    private void setValNow(float val)
+    {
+        updateClrByVal(val);
     }
 
     public void setColor(Color clr)
@@ -93,7 +114,7 @@ public class Tile : MonoBehaviour
         return clr;
     }
 
-    private void updateClrByHeight(float val)
+    private void updateClrByVal(float val)
     {
         Color currClr = clrByVal(val);
         currClr.a = 1;
@@ -104,18 +125,33 @@ public class Tile : MonoBehaviour
     {
         float dt = Time.deltaTime;
         timeSinceSet += dt;
-        if (targetHeight != null)
+        if (timeSinceSet >= animTime)
         {
-            if (timeSinceSet >= animTime)
+            if (targetHeight != null)
             {
                 setHeightNow(targetHeight.Value);
                 prevHeight = targetHeight.Value;
                 targetHeight = null;
             }
-            else
+
+            if (targetVal != null)
             {
-                float percent = timeSinceSet / animTime;
-                setHeightNow(prevHeight + (targetHeight.Value-prevHeight)*percent);
+                setValNow(targetVal.Value);
+                prevVal = targetVal.Value;
+                targetVal = null;
+            }
+        }
+        else
+        {
+            float percent = timeSinceSet / animTime;
+            if (targetHeight != null)
+            {
+                setHeightNow(prevHeight + (targetHeight.Value - prevHeight) * percent);
+            }
+
+            if (targetVal != null)
+            {
+                setValNow(prevVal + (targetVal.Value - prevVal) * percent);
             }
         }
     }

@@ -18,26 +18,49 @@ public class MapGenerator : MonoBehaviour
 
     private List<List<Tile>> tileList = null;
 
+    private int currMap = 0;
 
-    public void updateTiles(List<SerList> lst, Color clrPos, Color clrNeg)
+
+    private Color heightPosClr = new Color(0.8f, 0.2f, 0.1f);
+    private Color heightNegClr = new Color(0, 0, 1);
+
+    private Color treePosClr = new Color(0, 1, 0);
+    private Color treeNegClr = new Color(0.4f, 0.4f, 0.4f);
+
+ 
+    public void updateMap()
+    {
+        if (currMap == 0)
+        {
+            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)].Grid, GridManager.Singleton.TypeToDiffuse[typeof(Height)].Grid, heightPosClr, heightNegClr);
+        }
+        else if (currMap == 1)
+        {
+            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)].Grid, GridManager.Singleton.TypeToDiffuse[typeof(Tree)].Grid, treePosClr, treeNegClr);
+        }
+    }
+
+    public void updateTiles(List<SerList> heightLst, List<SerList> valLst, Color clrPos, Color clrNeg)
     {
         //float heightMult = (lst.Count + lst[0].L.Count) / 2 * heightScale;
         
-        for (int x = 0; x < lst.Count; x++)
+        for (int x = 0; x < heightLst.Count; x++)
         {
 
-            for (int y = 0; y < lst[x].L.Count; y++)
+            for (int y = 0; y < heightLst[x].L.Count; y++)
             {
                 Tile currTile = tileList[x][y];
 
                 //Tile tileHandler = currTile.GetComponent<Tile>();
 
-                float currVal = lst[x].L[y];
+                float currHeight = heightLst[x].L[y];
+                float currVal = valLst[x].L[y];
 
                 //float currHeight = mapHeight(currVal);
-                Debug.Log("2gen tile " + x + "," + y + " val: " + currVal);
+                //Debug.Log("2gen tile " + x + "," + y + " val: " + currVal);
 
-                currTile.setHeight(currVal);
+                currTile.setHeight(currHeight);
+                currTile.setVal(currVal);
                 //currTile.setColor(currClr);
             }
         }
@@ -66,14 +89,14 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public void setTiles(List<SerList> lst, Color clrPos, Color clrNeg)
+    public void setTiles(List<SerList> heightLst, List<SerList> valLst, Color clrPos, Color clrNeg)
     {
         if (tileList == null)
         {
-            genTiles(lst, clrPos, clrNeg);
+            genTiles(heightLst, clrPos, clrNeg);
         }
 
-        updateTiles(lst, clrPos, clrNeg);
+        updateTiles(heightLst, valLst, clrPos, clrNeg);
     }
 
     // Start is called before the first frame update

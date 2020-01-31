@@ -47,7 +47,7 @@ public class GridManager : MonoBehaviour
         }
 
         mapGen = GameObject.Find("/Map").GetComponent<MapGenerator>();
-        mapGen.setTiles(TypeToDiffuse[typeof(Height)].Grid, new Color(0.8f, 0.2f, 0.1f), new Color(0, 0, 1));
+        mapGen.updateMap();
     }
 
     // Update is called once per frame
