@@ -22,7 +22,7 @@ public class MapGenerator : MonoBehaviour
     public void updateTiles(List<SerList> lst, Color clrPos, Color clrNeg)
     {
         //float heightMult = (lst.Count + lst[0].L.Count) / 2 * heightScale;
-
+        
         for (int x = 0; x < lst.Count; x++)
         {
 
