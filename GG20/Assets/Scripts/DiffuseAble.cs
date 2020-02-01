@@ -12,7 +12,7 @@ public class DiffuseAble
     public HashSet<Vector2Int> Sources;
     public List<Vector2Int> PositiveSources;
     public List<Vector2Int> NegativeSources;
-    public float Damp = 1.7f;
+    public float Damp = 0.8f;
 
     public List<Effect> Effects = new List<Effect>();
 
