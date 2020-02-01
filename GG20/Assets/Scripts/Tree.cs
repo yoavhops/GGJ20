@@ -17,7 +17,8 @@ public class Tree : DiffuseAble
 
     protected override void Diffuse(int x, int y)
     {
-        if (GridManager.Singleton.TypeToDiffuse[typeof(Height)].GetGridValue(x, y) <= 0)
+        var heightValue = GridManager.Singleton.TypeToDiffuse[typeof(Height)].GetGridValue(x, y);
+        if (heightValue <= 0)
         {
             return;
         }

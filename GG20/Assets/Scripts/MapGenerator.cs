@@ -21,15 +21,37 @@ public class MapGenerator : MonoBehaviour
     private int currMap = 1;
 
 
-    private Color heightPosClr = new Color(0.8f, 0.2f, 0.1f);
-    private Color heightNegClr = new Color(0, 0, 1);
+    public Color heightPosClr = new Color(0.8f, 0.2f, 0.1f);
+    public Color heightNegClr = new Color(0, 0, 1);
 
-    private Color treePosClr = new Color(0, 1, 0);
-    private Color treeNegClr = new Color(0.4f, 0.4f, 0.4f);
+    public Color treePosClr = new Color(0, 1, 0);
+    public Color treeNegClr = new Color(0.4f, 0.4f, 0.4f);
 
-    DiffuseAble heightMap, treeCityMap;
- 
+    public Color saltPosClr = new Color(0.8f, 0.8f, 0.8f);
+    public Color saltNegClr = new Color(0.3f, 0.2f, 0.1f);
 
+    public Color temperaturePosClr = new Color(1, 0, 0);
+    public Color temperatureNegClr = new Color(1, 0, 1);
+
+    public Color nutrientsPosClr = new Color(0.3f, 0.5f, 0);
+    public Color nutrientsNegClr = new Color(0, 0.5f, 0.3f);
+
+    DiffuseAble heightMap, treeCityMap, saltMap, temperatureMap, nutrientsMap;
+
+
+
+    public void setNutrientsMap()
+    {
+        changeSource(4);
+    }
+    public void setTemperatureMap()
+    {
+        changeSource(3);
+    }
+    public void setSaltMap()
+    {
+        changeSource(2);
+    }
     public void setTreeMap()
     {
         changeSource(1);
@@ -54,6 +76,18 @@ public class MapGenerator : MonoBehaviour
         else if (currMap == 1)
         {
             setTiles(heightMap, treeCityMap, treePosClr, treeNegClr, 2, setHeight);
+        }
+        else if (currMap == 2)
+        {
+            setTiles(heightMap, saltMap, saltPosClr, saltNegClr, 1, setHeight);
+        }
+        else if (currMap == 3)
+        {
+            setTiles(heightMap, temperatureMap, temperaturePosClr, temperatureNegClr, 1, setHeight);
+        }
+        else if (currMap == 4)
+        {
+            setTiles(heightMap, nutrientsMap, nutrientsPosClr, nutrientsNegClr, 1, setHeight);
         }
     }
 
@@ -86,7 +120,7 @@ public class MapGenerator : MonoBehaviour
                     currCityVal = currCityVal * Time.deltaTime / 20;
                     if (Random.Range(0f,1f) < currCityVal)
                     {
-                        Debug.Log("POINT POP AT: " + x + "," + y);
+                        //Debug.Log("POINT POP AT: " + x + "," + y);
                     }
                 }
 
@@ -141,6 +175,9 @@ public class MapGenerator : MonoBehaviour
     {
         heightMap = GridManager.Singleton.TypeToDiffuse[typeof(Height)];
         treeCityMap = GridManager.Singleton.TypeToDiffuse[typeof(Tree)];
+        saltMap = GridManager.Singleton.TypeToDiffuse[typeof(SaltLevels)];
+        temperatureMap = GridManager.Singleton.TypeToDiffuse[typeof(Temperature)];
+        nutrientsMap = GridManager.Singleton.TypeToDiffuse[typeof(Nutrients)];
     }
 
     // Start is called before the first frame update
