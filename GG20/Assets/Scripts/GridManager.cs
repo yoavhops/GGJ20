@@ -22,6 +22,14 @@ public class GridManager : MonoBehaviour
     public List<Vector2Int> TreeSources;
     public List<Vector2Int> CitySources;
 
+    public List<Vector2Int> ColdSources;
+    public List<Vector2Int> HotSources;
+
+    public List<Vector2Int> SaltSources;
+    public List<Vector2Int> NoSaltSources;
+
+    public List<Vector2Int> NutrientsSources;
+    public List<Vector2Int> NoNutrientsSource;
 
     public int StartIteration = 50;
     //public float DampFactor = 0.9f;
@@ -33,8 +41,30 @@ public class GridManager : MonoBehaviour
         Singleton = this;
         TypeToDiffuse[typeof(Height)] = new Height(GetPositions(WaterSources).ToList(), GetPositions(MountainSources).ToList());
         DebugDiffuseAble.Add(TypeToDiffuse[typeof(Height)]);
+        InitializeMap(TypeToDiffuse[typeof(Height)]);
+
+        TypeToDiffuse[typeof(SaltLevels)] = new SaltLevels(NoSaltSources, SaltSources);
+        DebugDiffuseAble.Add(TypeToDiffuse[typeof(SaltLevels)]);
+        InitializeMap(TypeToDiffuse[typeof(SaltLevels)], 5);
+
+        TypeToDiffuse[typeof(Temperature)] = new Temperature(HotSources, ColdSources);
+        DebugDiffuseAble.Add(TypeToDiffuse[typeof(Temperature)]);
+        InitializeMap(TypeToDiffuse[typeof(Temperature)]);
+
+        TypeToDiffuse[typeof(Nutrients)] = new Nutrients(NutrientsSources, NoNutrientsSources);
+        DebugDiffuseAble.Add(TypeToDiffuse[typeof(Nutrients)]);
+        InitializeMap(TypeToDiffuse[typeof(Nutrients)]);
+
         TypeToDiffuse[typeof(Tree)] = new Tree(CitySources, TreeSources);
         DebugDiffuseAble.Add(TypeToDiffuse[typeof(Tree)]);
+    }
+
+    private void InitializeMap(DiffuseAble typeToInitialize, int iterations = 50)
+    {
+        for (int i = 0; i < iterations; i++)
+        {
+            typeToInitialize.FullDiffuse();
+        }
     }
 
     private IEnumerable<Vector2Int> GetPositions(GameObject parant)
@@ -52,6 +82,7 @@ public class GridManager : MonoBehaviour
         for (int i = 0; i < StartIteration; i++)
         {
             TypeToDiffuse[typeof(Height)].FullDiffuse();
+            TypeToDiffuse[typeof(SaltLevels)].FullDiffuse();
         }
 
         mapGen = GameObject.Find("/Map").GetComponent<MapGenerator>();
