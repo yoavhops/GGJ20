@@ -72,12 +72,14 @@ public class MapGenerator : MonoBehaviour
                 //Tile tileHandler = currTile.GetComponent<Tile>();
 
                 float currHeight = heightLst.GetValueWithOutEffects(x, y);
+                float currHeightVal = heightLst.GetValueWithEffects(x, y); // for color
                 float currVal = valLst.GetValueWithEffects(x, y);
 
                 //float currHeight = mapHeight(currVal);
                 //Debug.Log("2gen tile " + x + "," + y + " val: " + currVal);
 
                 currTile.setHeight(currHeight);
+                currTile.setHeightVal(currHeightVal);
                 currTile.setVal(currVal);
                 //currTile.setColor(currClr);
             }

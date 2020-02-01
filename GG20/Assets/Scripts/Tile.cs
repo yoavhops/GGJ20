@@ -10,6 +10,7 @@ public class Tile : MonoBehaviour
 
     private float prevHeight = 0;
     private float? targetHeight = null;
+    private float heightVal = 0;
 
     private float prevVal = 0;
     private float? targetVal = null;
@@ -73,6 +74,11 @@ public class Tile : MonoBehaviour
             prevHeight = targetHeight.Value;
         }
         targetHeight = height;
+    }
+
+    public void setHeightVal(float hval)
+    {
+        heightVal = hval;
     }
 
     public void setVal(float val)
@@ -152,7 +158,7 @@ public class Tile : MonoBehaviour
 
     private void updateClrByVal(float val, float height)
     {
-        Color currClr = clrByValHeight(val, height);
+        Color currClr = clrByValHeight(val, heightVal);
         currClr.a = 1;
         setColor(currClr);
     }
