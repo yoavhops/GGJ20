@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Effect
+public class Effect : MonoBehaviour
 {
     public virtual float GetEffectValue(int x, int y, float origValue)
     {
