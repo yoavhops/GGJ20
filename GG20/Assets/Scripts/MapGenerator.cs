@@ -47,15 +47,15 @@ public class MapGenerator : MonoBehaviour
     {
         if (currMap == 0)
         {
-            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Height)], heightPosClr, heightNegClr);
+            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Height)], heightPosClr, heightNegClr, 0);
         }
         else if (currMap == 1)
         {
-            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Tree)], treePosClr, treeNegClr);
+            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Tree)], treePosClr, treeNegClr, 2);
         }
     }
 
-    public void updateTiles(DiffuseAble heightLst, DiffuseAble valLst, Color clrPos, Color clrNeg)
+    public void updateTiles(DiffuseAble heightLst, DiffuseAble valLst, Color clrPos, Color clrNeg, int clrMergeOption)
     {
         //float heightMult = (lst.Count + lst[0].L.Count) / 2 * heightScale;
         
@@ -68,6 +68,8 @@ public class MapGenerator : MonoBehaviour
 
                 currTile.posClr = clrPos;
                 currTile.negClr = clrNeg;
+
+                currTile.clrMergeOption = clrMergeOption;
 
                 //Tile tileHandler = currTile.GetComponent<Tile>();
 
@@ -109,14 +111,14 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public void setTiles(DiffuseAble heightLst, DiffuseAble valLst, Color clrPos, Color clrNeg)
+    public void setTiles(DiffuseAble heightLst, DiffuseAble valLst, Color clrPos, Color clrNeg, int clrMergeOption)
     {
         if (tileList == null)
         {
             genTiles(heightLst, heightPosClr, heightNegClr);
         }
 
-        updateTiles(heightLst, valLst, clrPos, clrNeg);
+        updateTiles(heightLst, valLst, clrPos, clrNeg, clrMergeOption);
     }
 
     // Start is called before the first frame update
