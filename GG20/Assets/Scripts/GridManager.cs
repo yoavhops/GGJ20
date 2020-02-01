@@ -62,7 +62,7 @@ public class GridManager : MonoBehaviour
         DebugDiffuseAble.Add(TypeToDiffuse[typeof(Nutrients)]);
         InitializeMap(TypeToDiffuse[typeof(Nutrients)]);
 
-        TypeToDiffuse[typeof(Tree)] = new Tree(CitySources, TreeSources);
+        TypeToDiffuse[typeof(Tree)] = new Tree(TreeSources, CitySources);
         DebugDiffuseAble.Add(TypeToDiffuse[typeof(Tree)]);
     }
 
