@@ -37,10 +37,17 @@ public class MapGenerator : MonoBehaviour
     public Color nutrientsPosClr = new Color(0.3f, 0.5f, 0);
     public Color nutrientsNegClr = new Color(0, 0.5f, 0.3f);
 
-    DiffuseAble heightMap, treeCityMap, saltMap, temperatureMap, nutrientsMap;
+    public Color hydrationPosClr = new Color(0.3f, 0.5f, 0);
+    public Color hydrationNegClr = new Color(0, 0.5f, 0.3f);
 
 
+    DiffuseAble heightMap, treeCityMap, saltMap, temperatureMap, nutrientsMap, hydrationMap;
 
+
+    public void setHydrationMap()
+    {
+        changeSource(5);
+    }
     public void setNutrientsMap()
     {
         changeSource(4);
@@ -89,6 +96,10 @@ public class MapGenerator : MonoBehaviour
         else if (currMap == 4)
         {
             setTiles(heightMap, nutrientsMap, nutrientsPosClr, nutrientsNegClr, 1, setHeight);
+        }
+        else if (currMap == 5)
+        {
+            setTiles(heightMap, hydrationMap, hydrationPosClr, hydrationNegClr, 1, setHeight);
         }
     }
 
@@ -181,6 +192,7 @@ public class MapGenerator : MonoBehaviour
         saltMap = GridManager.Singleton.TypeToDiffuse[typeof(SaltLevels)];
         temperatureMap = GridManager.Singleton.TypeToDiffuse[typeof(Temperature)];
         nutrientsMap = GridManager.Singleton.TypeToDiffuse[typeof(Nutrients)];
+        hydrationMap = GridManager.Singleton.TypeToDiffuse[typeof(Hydration)];
     }
 
     // Start is called before the first frame update

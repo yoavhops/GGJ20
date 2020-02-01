@@ -75,7 +75,7 @@ public class Tree : DiffuseAble
             && hydrationValue >= CityMinHydration);
     }
 
-    private bool CanTreesGrow(int x, int y)
+    public bool CanTreesGrow(int x, int y)
     {
         var heightValue = GridManager.Singleton.TypeToDiffuse[typeof(Height)].GetGridValue(x, y);
         var saltValue = GridManager.Singleton.TypeToDiffuse[typeof(SaltLevels)].GetGridValue(x, y);
