@@ -188,8 +188,6 @@ public class Tile : MonoBehaviour
             if (targetHeight != null)
             {
                 height = prevHeight + (targetHeight.Value - prevHeight) * percent;
-                Debug.Log("percent: " + percent);
-                Debug.Log("height: " + height);
                 setHeightNow(height);
             }
 

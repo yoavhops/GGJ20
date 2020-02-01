@@ -71,8 +71,8 @@ public class MapGenerator : MonoBehaviour
 
                 //Tile tileHandler = currTile.GetComponent<Tile>();
 
-                float currHeight = heightLst.GetGridValue(x, y);
-                float currVal = valLst.GetGridValue(x, y);
+                float currHeight = heightLst.GetValueWithOutEffects(x, y);
+                float currVal = valLst.GetValueWithEffects(x, y);
 
                 //float currHeight = mapHeight(currVal);
                 //Debug.Log("2gen tile " + x + "," + y + " val: " + currVal);
