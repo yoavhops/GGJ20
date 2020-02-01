@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = System.Random;
 
 [Serializable]
 public class DiffuseAble
@@ -11,6 +12,9 @@ public class DiffuseAble
     public HashSet<Vector2Int> Sources;
     public List<Vector2Int> PositiveSources;
     public List<Vector2Int> NegativeSources;
+    public float Damp = 1.7f;
+
+    public List<Effect> Effects = new List<Effect>();
 
     protected DiffuseAble(List<Vector2Int> positiveSources, List<Vector2Int> negativeSources)
     {
@@ -30,15 +34,46 @@ public class DiffuseAble
 
         foreach (var source in PositiveSources)
         {
-            Grid[source.x].L[source.y] = -1;
-            Sources.Add(source);
+            if (source.x < GridManager.Singleton.Width && source.y < GridManager.Singleton.Height)
+            {
+                Grid[source.x].L[source.y] = UnityEngine.Random.Range(0.2f, 1);
+                Sources.Add(source);
+            }
         }
 
         foreach (var source in NegativeSources)
         {
-            Grid[source.x].L[source.y] = 1;
-            Sources.Add(source);
+            if (source.x < GridManager.Singleton.Width && source.y < GridManager.Singleton.Height)
+            {
+                Grid[source.x].L[source.y] = -UnityEngine.Random.Range(0.2f, 1); ;
+                Sources.Add(source);
+            }
         }
+    }
+
+    public void AddEffect(Effect effect)
+    {
+        Effects.Add(effect);
+    }
+
+    public float GetValueWithOutEffects(int x, int y)
+    {
+        return Grid[x].L[y];
+    }
+
+    public float GetValueWithEffects(int x, int y)
+    {
+        var ans = Grid[x].L[y];
+        var origValue = ans;
+
+        Effects.RemoveAll(effect => effect.IsDone());
+
+        foreach (var effects in Effects)
+        {
+            ans += effects.GetEffectValue(x, y, origValue);
+        }
+
+        return Math.Min(ans, 1);
     }
 
     public void FullDiffuse()
@@ -67,17 +102,25 @@ public class DiffuseAble
 
     protected virtual void Diffuse(int x, int y)
     {
+        var avg = 0f;
+        var gave = 0f;
+        foreach (var niePositions in GetNiePositions(x, y))
+        {
+            var sideDelta = Grid[x].L[y] - GetGridValue(niePositions.x, niePositions.y);
+            sideDelta /= 4f;
+            sideDelta *= Damp;
+            gave += sideDelta;
+
+            if (Sources.Contains(new Vector2Int(niePositions.x, niePositions.y)))
+                continue;
+
+            Grid[niePositions.x].L[niePositions.y] += sideDelta;
+        }
+
         if (Sources.Contains(new Vector2Int(x, y)))
             return;
 
-        var avg = 0f;
-        foreach (var niePositions in GetNiePositions(x, y))
-        {
-            avg += GetGridValue(niePositions.x, niePositions.y);
-        }
-        avg = avg / GetNiePositions(x, y).Count();
-        //avg *= DampFactor;
-        Grid[x].L[y] = avg;
+        Grid[x].L[y] -= gave;
     }
 
 

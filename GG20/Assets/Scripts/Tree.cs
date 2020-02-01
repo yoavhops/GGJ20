@@ -7,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public class Tree : DiffuseAble
 {
-    public static float GrowthRate = 0.01f;
+    public static float GrowthRate = 0.00f;
 
     public Tree(List<Vector2Int> positiveSources, List<Vector2Int> negativeSources):
         base(positiveSources, negativeSources)
@@ -17,7 +17,8 @@ public class Tree : DiffuseAble
 
     protected override void Diffuse(int x, int y)
     {
-        if (GridManager.Singleton.TypeToDiffuse[typeof(Height)].GetGridValue(x, y) <= 0)
+        var heightValue = GridManager.Singleton.TypeToDiffuse[typeof(Height)].GetGridValue(x, y);
+        if (heightValue <= 0)
         {
             return;
         }
