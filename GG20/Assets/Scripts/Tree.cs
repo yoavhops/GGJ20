@@ -47,7 +47,7 @@ public class Tree : DiffuseAble
 
             if (CanTreesGrow(x,y))
             {
-                Grid[x].L[y] = Math.Min(Grid[x].L[y] + nutrientsValue * GrowthRate, 1);
+                Grid[x].L[y] = Math.Min(Grid[x].L[y] + nutrientsValue * GrowthRate, 1/*TODO::public s*/);
             }
             
 

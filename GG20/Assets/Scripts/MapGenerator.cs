@@ -134,7 +134,8 @@ public class MapGenerator : MonoBehaviour
                     {
                         //Debug.Log("POINT POP AT: " + x + "," + y);
                         GameObject carbonPointObj = Instantiate(carbonPoint);
-                        carbonPointObj.transform.position = currTile.transform.position;
+                        carbonPointObj.transform.position = new Vector3(currTile.transform.position.x, currTile.transform.lossyScale.y, currTile.transform.position.z);
+
                     }
                 }
 

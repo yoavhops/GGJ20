@@ -97,6 +97,7 @@ public class Skill : MonoBehaviour
 
     private void FireSkillEffects()
     {
+        //TODO:: add maxtree value that will affect TODO in Tree
         _treeDiffuse.TreeMaxHeight += effectOnMaxHeight;
         _treeDiffuse.TreeMaxHydration += effectOnMaxHydration;
         _treeDiffuse.TreeMaxSalt += effectOnMaxSalt;
