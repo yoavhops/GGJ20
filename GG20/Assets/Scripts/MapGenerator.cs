@@ -18,7 +18,7 @@ public class MapGenerator : MonoBehaviour
 
     private List<List<Tile>> tileList = null;
 
-    private int currMap = 0;
+    private int currMap = 1;
 
 
     private Color heightPosClr = new Color(0.8f, 0.2f, 0.1f);
@@ -94,8 +94,8 @@ public class MapGenerator : MonoBehaviour
             {
                 GameObject currTile = Instantiate(tile);
                 Tile tileHandler = currTile.GetComponent<Tile>();
-                tileHandler.posClr = clrPos;
-                tileHandler.negClr = clrNeg;
+                tileHandler.hPosClr = clrPos;
+                tileHandler.hNegClr = clrNeg;
                 tileHandler.heightScale = (lst.Count + lst[0].L.Count) / 2 * heightScale;
                 tileHandler.animTime = animTimeSec;
                 tileHandler.clrMin = clrMin;
@@ -111,7 +111,7 @@ public class MapGenerator : MonoBehaviour
     {
         if (tileList == null)
         {
-            genTiles(heightLst, clrPos, clrNeg);
+            genTiles(heightLst, heightPosClr, heightNegClr);
         }
 
         updateTiles(heightLst, valLst, clrPos, clrNeg);
