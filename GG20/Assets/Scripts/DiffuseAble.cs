@@ -18,8 +18,6 @@ public class DiffuseAble
 
     protected DiffuseAble(List<Vector2Int> positiveSources, List<Vector2Int> negativeSources)
     {
-        Debug.Log("Is parent first?");
-
         PositiveSources = positiveSources;
         NegativeSources = negativeSources;
 
