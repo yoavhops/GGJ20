@@ -7,11 +7,11 @@ using UnityEngine;
 [Serializable]
 public class Zonami : Effect
 {
-    private const float MaxHeight = 0.1f;
+    private const float MaxHeight = 0.2f;
     private const float EffectTime = 3f;
     private const int EffectDistance = 10;
     private const float EffectRingSize = 2.5f;
-    private const float EffectValue = -0.3f;
+    private const float EffectValue = -0.2f;
 
     public Vector2Int OrigPos;
 
@@ -72,7 +72,10 @@ public class Zonami : Effect
 
     private void Act(Vector2Int pos)
     {
-        GridManager.Singleton.TypeToDiffuse[]
+        if (!GridManager.Singleton.InRange(pos.x, pos.y))
+            return;
+
+        GridManager.Singleton.TypeToDiffuse[typeof(Height)].AddEffectValue(pos, EffectValue);
     }
 
 

@@ -66,7 +66,16 @@ public class DiffuseAble
         var ans = Grid[x].L[y];
         var origValue = ans;
 
-        Effects.RemoveAll(effect => effect.IsDone());
+        Effects.RemoveAll(effect =>
+        {
+            if (effect.IsDone())
+            {
+                GameObject.Destroy(effect.gameObject);
+                return true;
+            }
+
+            return false;
+        });
 
         foreach (var effects in Effects)
         {
@@ -74,6 +83,14 @@ public class DiffuseAble
         }
 
         return Math.Min(ans, 1);
+    }
+
+    public void AddEffectValue(Vector2Int pos, float delta)
+    {
+        if (Sources.Contains(pos))
+            return;
+
+        Grid[pos.x].L[pos.y] = Mathf.Clamp(Grid[pos.x].L[pos.y] + delta, -1, 1);
     }
 
     public void FullDiffuse()

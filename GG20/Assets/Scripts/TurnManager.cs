@@ -24,6 +24,8 @@ public class TurnManager : MonoBehaviour
     {
         currentTreeTime -= Time.deltaTime;
 
+        GridManager.Singleton.TypeToDiffuse[typeof(Height)].FullDiffuse();
+
         if (currentTreeTime <= 0)
         {
             currentTreeTime += TreeTime;
