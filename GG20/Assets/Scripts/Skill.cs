@@ -13,12 +13,21 @@ public class Skill : MonoBehaviour
     public List<Skill> requiredSkills;
     public bool isLocked = true;
 
-    public float effectOnHot;
-    public float effectOnCold;
-    public float effectOnSalt;
-    public float effectOnHydration;
-    public float effectOnHeight;
-    public float effectOnNutrients;
+    public float effectOnMaxHot;
+    public float effectOnMaxCold;
+    public float effectOnMaxSalt;
+    public float effectOnMaxHydratiOnMax;
+    public float effectOnMaxHeight;
+    public float effectOnMaxNutrients;
+
+    public float effectOnMinHot;
+    public float effectOnMinCold;
+    public float effectOnMinSalt;
+    public float effectOnMinHydratiOnMin;
+    public float effectOnMinHeight;
+    public float effectOnMinNutrients;
+
+    private Tree _treeDiffuse;
 
     private int points = 10; //TODO::get actual points
 
@@ -40,6 +49,8 @@ public class Skill : MonoBehaviour
         skillImage = GetComponent<Image>();
 
         skillImage.color = ColorSkillSetting.singleton.colorLocked;
+
+        _treeDiffuse = GridManager.Singleton.TypeToDiffuse[typeof(Tree)];
     }
 
     private void Update()
@@ -54,6 +65,7 @@ public class Skill : MonoBehaviour
         }
 
     }
+
 
     public void OnClick()
     {
