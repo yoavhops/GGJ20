@@ -5,6 +5,7 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     public GameObject tile;
+    public GameObject carbonPoint;
 
     private float Width = 20;
     private float Height = 20;
@@ -21,14 +22,37 @@ public class MapGenerator : MonoBehaviour
     private int currMap = 1;
 
 
-    private Color heightPosClr = new Color(0.8f, 0.2f, 0.1f);
-    private Color heightNegClr = new Color(0, 0, 1);
+    public Color heightPosClr = new Color(0.8f, 0.2f, 0.1f);
+    public Color heightNegClr = new Color(0, 0, 1);
 
-    private Color treePosClr = new Color(0, 1, 0);
-    private Color treeNegClr = new Color(0.4f, 0.4f, 0.4f);
+    public Color treePosClr = new Color(0, 1, 0);
+    public Color treeNegClr = new Color(0.4f, 0.4f, 0.4f);
 
- 
+    public Color saltPosClr = new Color(0.8f, 0.8f, 0.8f);
+    public Color saltNegClr = new Color(0.3f, 0.2f, 0.1f);
 
+    public Color temperaturePosClr = new Color(1, 0, 0);
+    public Color temperatureNegClr = new Color(1, 0, 1);
+
+    public Color nutrientsPosClr = new Color(0.3f, 0.5f, 0);
+    public Color nutrientsNegClr = new Color(0, 0.5f, 0.3f);
+
+    DiffuseAble heightMap, treeCityMap, saltMap, temperatureMap, nutrientsMap;
+
+
+
+    public void setNutrientsMap()
+    {
+        changeSource(4);
+    }
+    public void setTemperatureMap()
+    {
+        changeSource(3);
+    }
+    public void setSaltMap()
+    {
+        changeSource(2);
+    }
     public void setTreeMap()
     {
         changeSource(1);
@@ -45,13 +69,26 @@ public class MapGenerator : MonoBehaviour
 
     public void updateMap(bool setHeight)
     {
+        updateLists();
         if (currMap == 0)
         {
-            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Height)], heightPosClr, heightNegClr, 0, setHeight);
+            setTiles(heightMap, heightMap, heightPosClr, heightNegClr, 0, setHeight);
         }
         else if (currMap == 1)
         {
-            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Tree)], treePosClr, treeNegClr, 2, setHeight);
+            setTiles(heightMap, treeCityMap, treePosClr, treeNegClr, 2, setHeight);
+        }
+        else if (currMap == 2)
+        {
+            setTiles(heightMap, saltMap, saltPosClr, saltNegClr, 1, setHeight);
+        }
+        else if (currMap == 3)
+        {
+            setTiles(heightMap, temperatureMap, temperaturePosClr, temperatureNegClr, 1, setHeight);
+        }
+        else if (currMap == 4)
+        {
+            setTiles(heightMap, nutrientsMap, nutrientsPosClr, nutrientsNegClr, 1, setHeight);
         }
     }
 
@@ -76,6 +113,19 @@ public class MapGenerator : MonoBehaviour
                 float currHeight = heightLst.GetValueWithOutEffects(x, y);
                 float currHeightVal = heightLst.GetValueWithEffects(x, y); // for color
                 float currVal = valLst.GetValueWithEffects(x, y);
+
+                float currCityVal = treeCityMap.GetValueWithEffects(x,y);
+                if (currCityVal > 0)
+                {
+                    //currCityVal *= -1;
+                    currCityVal = currCityVal * Time.deltaTime / 200;
+                    if (Random.Range(0f,1f) < currCityVal)
+                    {
+                        //Debug.Log("POINT POP AT: " + x + "," + y);
+                        GameObject carbonPointObj = Instantiate(carbonPoint);
+                        carbonPointObj.transform.position = currTile.transform.position;
+                    }
+                }
 
                 //float currHeight = mapHeight(currVal);
                 //Debug.Log("2gen tile " + x + "," + y + " val: " + currVal);
@@ -124,6 +174,15 @@ public class MapGenerator : MonoBehaviour
         updateTiles(heightLst, valLst, clrPos, clrNeg, clrMergeOption, setHeight);
     }
 
+    private void updateLists()
+    {
+        heightMap = GridManager.Singleton.TypeToDiffuse[typeof(Height)];
+        treeCityMap = GridManager.Singleton.TypeToDiffuse[typeof(Tree)];
+        saltMap = GridManager.Singleton.TypeToDiffuse[typeof(SaltLevels)];
+        temperatureMap = GridManager.Singleton.TypeToDiffuse[typeof(Temperature)];
+        nutrientsMap = GridManager.Singleton.TypeToDiffuse[typeof(Nutrients)];
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -138,7 +197,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
         */
-        
+
         //genTiles(GridManager.Singleton.Grid, new Color(0.8f, 0.2f, 0.1f), new Color(0,0,1));
     }
 

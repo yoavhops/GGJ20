@@ -1,25 +1,41 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
 public class Zonami : Effect
 {
-    private const float MaxHeight = 0.1f;
+    private const float MaxHeight = 0.2f;
     private const float EffectTime = 3f;
-    private const float EffectDistance = 10f;
+    private const int EffectDistance = 10;
     private const float EffectRingSize = 2.5f;
-    private const float EffectValue = -0.3f;
+    private const float EffectValue = -0.2f;
 
-    public readonly Vector2Int OrigPos;
+    public Vector2Int OrigPos;
 
     public float timeWhenEffectStart;
 
-    public Zonami(int x, int y)
+    public List<Vector2Int> Offsets = new List<Vector2Int>();
+
+    private float lastDistance = 0;
+
+    public void Init(int x, int y)
     {
         OrigPos = new Vector2Int(x,y);
         timeWhenEffectStart = Time.time;
+        transform.position = new Vector3(OrigPos.x, 0 ,OrigPos.y);
+        gameObject.name = (this).name;
+        
+        for (int xd = -EffectDistance; xd <= EffectDistance; xd++)
+        for (int yd = -EffectDistance; yd <= EffectDistance; yd++)
+        {
+            Offsets.Add(new Vector2Int(xd, yd));
+        }
+
+        Offsets = Offsets.OrderBy(item => Vector2Int.Distance(Vector2Int.zero, item)).ToList();
+
     }
 
     public override bool IsDone()
@@ -27,22 +43,44 @@ public class Zonami : Effect
         return (Time.time - timeWhenEffectStart) > EffectTime;
     }
 
-    public override float GetEffectValue(int x, int y, float origValue)
+    void Update()
     {
-        if (origValue > MaxHeight)
-            return 0;
-
-        var diffTimeNormalized  = (Time.time - timeWhenEffectStart) / EffectTime;
-
+        var diffTimeNormalized = (Time.time - timeWhenEffectStart) / EffectTime;
         var bestDistance = diffTimeNormalized * EffectDistance;
 
-        var currentDistance = Vector2Int.Distance(new Vector2Int(x, y), OrigPos);
+        int i = 0;
+        for (; i < Offsets.Count; i++)
+        {
+            var pos = new Vector2Int(OrigPos.x + Offsets[i].x, OrigPos.y + Offsets[i].y);
+            var currentDistance = Vector2Int.Distance(pos, OrigPos);
 
+            if (currentDistance > bestDistance)
+                break;
+
+            Act(pos);
+        }
+
+        if (i > 0)
+            Offsets.RemoveRange(0, i);
+
+        /*
         if (Math.Abs(bestDistance - currentDistance) < EffectRingSize)
         {
             return EffectValue;
-        }
+        }*/
+    }
 
+    private void Act(Vector2Int pos)
+    {
+        if (!GridManager.Singleton.InRange(pos.x, pos.y))
+            return;
+
+        GridManager.Singleton.TypeToDiffuse[typeof(Height)].AddEffectValue(pos, EffectValue);
+    }
+
+
+    public override float GetEffectValue(int x, int y, float origValue)
+    {
         return 0;
     }
 }

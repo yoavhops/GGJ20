@@ -24,6 +24,8 @@ public class TurnManager : MonoBehaviour
     {
         currentTreeTime -= Time.deltaTime;
 
+        GridManager.Singleton.TypeToDiffuse[typeof(Height)].FullDiffuse();
+
         if (currentTreeTime <= 0)
         {
             currentTreeTime += TreeTime;
@@ -36,11 +38,10 @@ public class TurnManager : MonoBehaviour
         if (currentZonamiTime < 0)
         {
             currentZonamiTime += ZonamiTime;
-            GridManager.Singleton.TypeToDiffuse[typeof(Height)].AddEffect(
-                new Zonami(
-                    Random.Range(0, GridManager.Singleton.Width),
-                    Random.Range(0, GridManager.Singleton.Height)
-                ));
+
+            var zonami = new GameObject().AddComponent<Zonami>();
+            zonami.Init(Random.Range(0, GridManager.Singleton.Width), Random.Range(0, GridManager.Singleton.Height));
+            GridManager.Singleton.TypeToDiffuse[typeof(Height)].AddEffect(zonami);
         }
 
 
