@@ -126,15 +126,16 @@ public class MapGenerator : MonoBehaviour
                 float currVal = valLst.GetValueWithEffects(x, y);
 
                 float currCityVal = treeCityMap.GetValueWithEffects(x,y);
-                if (currCityVal > 0)
+                if (currCityVal < 0)
                 {
-                    //currCityVal *= -1;
+                    currCityVal *= -1;
                     currCityVal = currCityVal * Time.deltaTime / 200;
                     if (Random.Range(0f,1f) < currCityVal)
                     {
                         //Debug.Log("POINT POP AT: " + x + "," + y);
                         GameObject carbonPointObj = Instantiate(carbonPoint);
-                        carbonPointObj.transform.position = currTile.transform.position;
+                        carbonPointObj.transform.position = new Vector3(currTile.transform.position.x, currTile.transform.lossyScale.y, currTile.transform.position.z);
+
                     }
                 }
 
