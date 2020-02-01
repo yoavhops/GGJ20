@@ -34,14 +34,20 @@ public class DiffuseAble
 
         foreach (var source in PositiveSources)
         {
-            Grid[source.x].L[source.y] = UnityEngine.Random.Range(0.2f,1);
-            Sources.Add(source);
+            if (source.x < GridManager.Singleton.Width && source.y < GridManager.Singleton.Height)
+            {
+                Grid[source.x].L[source.y] = UnityEngine.Random.Range(0.2f, 1);
+                Sources.Add(source);
+            }
         }
 
         foreach (var source in NegativeSources)
         {
-            Grid[source.x].L[source.y] = -UnityEngine.Random.Range(0.2f, 1); ;
-            Sources.Add(source);
+            if (source.x < GridManager.Singleton.Width && source.y < GridManager.Singleton.Height)
+            {
+                Grid[source.x].L[source.y] = -UnityEngine.Random.Range(0.2f, 1); ;
+                Sources.Add(source);
+            }
         }
     }
 
