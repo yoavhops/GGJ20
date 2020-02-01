@@ -611,8 +611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a1af507214f024596e73230f0fcb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 100
-  Height: 100
+  Width: 50
+  Height: 50
   DebugDiffuseAble: []
   WaterSources: {fileID: 8653598414958289123, guid: f35deb580ba43af46984f83fce46a8ba,
     type: 3}
@@ -625,21 +625,42 @@ MonoBehaviour:
   - {x: 12, y: 37}
   - {x: 11, y: 11}
   ColdSources:
-  - {x: 50, y: 0}
-  - {x: 45, y: 1}
-  - {x: 55, y: 1}
-  - {x: 50, y: 99}
-  - {x: 45, y: 98}
-  - {x: 55, y: 98}
-  - {x: 84, y: 12}
-  - {x: 22, y: 79}
-  - {x: 37, y: 37}
-  - {x: 69, y: 72}
-  HotSources: []
+  - {x: 25, y: 0}
+  - {x: 23, y: 1}
+  - {x: 27, y: 1}
+  - {x: 25, y: 49}
+  - {x: 22, y: 48}
+  - {x: 28, y: 48}
+  - {x: 42, y: 6}
+  - {x: 11, y: 29}
+  - {x: 18, y: 19}
+  - {x: 34, y: 37}
+  HotSources:
+  - {x: 24, y: 24}
+  - {x: 15, y: 17}
+  - {x: 12, y: 36}
+  - {x: 27, y: 14}
+  - {x: 26, y: 30}
+  - {x: 47, y: 20}
+  - {x: 45, y: 27}
+  - {x: 42, y: 24}
+  - {x: 1, y: 26}
+  - {x: 3, y: 14}
   SaltSources: []
   NoSaltSources: []
-  NutrientsSources: []
-  NoNutrientsSource: []
+  NutrientsSources:
+  - {x: 2, y: 12}
+  - {x: 12, y: 46}
+  - {x: 19, y: 17}
+  - {x: 31, y: 36}
+  - {x: 41, y: 20}
+  - {x: 47, y: 7}
+  NoNutrientsSource:
+  - {x: 0, y: 19}
+  - {x: 8, y: 46}
+  - {x: 15, y: 6}
+  - {x: 37, y: 30}
+  - {x: 47, y: 24}
   StartIteration: 50
 --- !u!1 &1385012021
 GameObject:
