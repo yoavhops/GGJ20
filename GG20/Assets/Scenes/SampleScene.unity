@@ -622,6 +622,45 @@ MonoBehaviour:
   - {x: 25, y: 25}
   CitySources:
   - {x: 40, y: 40}
+  - {x: 12, y: 37}
+  - {x: 11, y: 11}
+  ColdSources:
+  - {x: 25, y: 0}
+  - {x: 23, y: 1}
+  - {x: 27, y: 1}
+  - {x: 25, y: 49}
+  - {x: 22, y: 48}
+  - {x: 28, y: 48}
+  - {x: 42, y: 6}
+  - {x: 11, y: 29}
+  - {x: 18, y: 19}
+  - {x: 34, y: 37}
+  HotSources:
+  - {x: 24, y: 24}
+  - {x: 15, y: 17}
+  - {x: 12, y: 36}
+  - {x: 27, y: 14}
+  - {x: 26, y: 30}
+  - {x: 47, y: 20}
+  - {x: 45, y: 27}
+  - {x: 42, y: 24}
+  - {x: 1, y: 26}
+  - {x: 3, y: 14}
+  SaltSources: []
+  NoSaltSources: []
+  NutrientsSources:
+  - {x: 2, y: 12}
+  - {x: 12, y: 46}
+  - {x: 19, y: 17}
+  - {x: 31, y: 36}
+  - {x: 41, y: 20}
+  - {x: 47, y: 7}
+  NoNutrientsSource:
+  - {x: 0, y: 19}
+  - {x: 8, y: 46}
+  - {x: 15, y: 6}
+  - {x: 37, y: 30}
+  - {x: 47, y: 24}
   StartIteration: 50
 --- !u!1 &1385012021
 GameObject:
@@ -831,6 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TreeOffset: 1
   TreeTime: 1
+  ZonamiTime: 0.6
 --- !u!4 &1941629578
 Transform:
   m_ObjectHideFlags: 0

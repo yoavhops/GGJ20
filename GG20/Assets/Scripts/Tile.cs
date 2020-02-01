@@ -10,6 +10,7 @@ public class Tile : MonoBehaviour
 
     private float prevHeight = 0;
     private float? targetHeight = null;
+    private float heightVal = 0;
 
     private float prevVal = 0;
     private float? targetVal = null;
@@ -24,6 +25,8 @@ public class Tile : MonoBehaviour
     public float clrMin = 0.4f;
 
     public float mergeVal = 0.05f;
+
+    public int clrMergeOption = 2; //0 - ovveride all. 1 - override except oceans. 2 - merge with height and show oceans
 
     void Awake()
     {
@@ -75,6 +78,11 @@ public class Tile : MonoBehaviour
         targetHeight = height;
     }
 
+    public void setHeightVal(float hval)
+    {
+        heightVal = hval;
+    }
+
     public void setVal(float val)
     {
         prevVal = val;
@@ -116,8 +124,26 @@ public class Tile : MonoBehaviour
     {
         Color clr = clrByVal(val, posClr, negClr);
         Color hclr = clrByVal(height, hPosClr, hNegClr);
+        ////0 - ovveride all. . 2 - 
+        if (clrMergeOption == 0)
+        {
+            //keep clr
+        } else if (clrMergeOption == 1)
+        {
+            if (height < 0)
+            {
+                clr = hclr;
+            }
+        } else
+        {
+            //merge with height and show oceans
+            //float clrSz = clr.r * clr.r + clr.g * clr.g + clr.b * clr.b;
+            //float hclrSz = hclr.r * hclr.r + hclr.g * hclr.g + hclr.b * hclr.b;
 
-        clr = (Mathf.Abs(val) * clr + (1 - Mathf.Abs(val)) * hclr) / 2;
+            clr = (Mathf.Abs(val) * clr + (1 - Mathf.Abs(val)) * hclr) / Mathf.Sqrt(val * val + (1-val)*(1-val));
+        }
+
+        
         //if (targetVal != null && Mathf.Abs(targetVal.Value) < 0.2f)
         //{
         //    clr = hclr;
@@ -152,7 +178,7 @@ public class Tile : MonoBehaviour
 
     private void updateClrByVal(float val, float height)
     {
-        Color currClr = clrByValHeight(val, height);
+        Color currClr = clrByValHeight(val, heightVal);
         currClr.a = 1;
         setColor(currClr);
     }
