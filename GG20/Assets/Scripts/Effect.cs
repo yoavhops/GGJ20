@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class Effect
 {
-    public virtual float GetEffectValueForColor(int x, int y, float origValue)
+    public virtual float GetEffectValue(int x, int y, float origValue)
     {
         throw new NotImplementedException();
     }

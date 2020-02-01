@@ -34,18 +34,34 @@ public class DiffuseAble
 
         foreach (var source in PositiveSources)
         {
-            Grid[source.x].L[source.y] = UnityEngine.Random.Range(0.2f,1);
-            Sources.Add(source);
+            if (source.x < GridManager.Singleton.Width && source.y < GridManager.Singleton.Height)
+            {
+                Grid[source.x].L[source.y] = UnityEngine.Random.Range(0.2f, 1);
+                Sources.Add(source);
+            }
         }
 
         foreach (var source in NegativeSources)
         {
-            Grid[source.x].L[source.y] = -UnityEngine.Random.Range(0.2f, 1); ;
-            Sources.Add(source);
+            if (source.x < GridManager.Singleton.Width && source.y < GridManager.Singleton.Height)
+            {
+                Grid[source.x].L[source.y] = -UnityEngine.Random.Range(0.2f, 1); ;
+                Sources.Add(source);
+            }
         }
     }
 
-    public float GetValueForColor(int x, int y)
+    public void AddEffect(Effect effect)
+    {
+        Effects.Add(effect);
+    }
+
+    public float GetValueWithOutEffects(int x, int y)
+    {
+        return Grid[x].L[y];
+    }
+
+    public float GetValueWithEffects(int x, int y)
     {
         var ans = Grid[x].L[y];
         var origValue = ans;
@@ -54,7 +70,7 @@ public class DiffuseAble
 
         foreach (var effects in Effects)
         {
-            ans += effects.GetEffectValueForColor(x, y, origValue);
+            ans += effects.GetEffectValue(x, y, origValue);
         }
 
         return Math.Min(ans, 1);

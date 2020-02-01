@@ -10,7 +10,7 @@ public class Zonami : Effect
     private const float EffectTime = 3f;
     private const float EffectDistance = 10f;
     private const float EffectRingSize = 2.5f;
-    private const float EffectValue = 0.3f;
+    private const float EffectValue = -0.3f;
 
     public readonly Vector2Int OrigPos;
 
@@ -27,7 +27,7 @@ public class Zonami : Effect
         return (Time.time - timeWhenEffectStart) > EffectTime;
     }
 
-    public override float GetEffectValueForColor(int x, int y, float origValue)
+    public override float GetEffectValue(int x, int y, float origValue)
     {
         if (origValue > MaxHeight)
             return 0;

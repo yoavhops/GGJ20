@@ -12,6 +12,7 @@ public class Tile : MonoBehaviour
     private float prevVal = 0;
     private float? targetVal = null;
 
+    public Color hPosClr, hNegClr;
     public Color posClr, negClr;
 
     public float heightScale;
@@ -29,16 +30,23 @@ public class Tile : MonoBehaviour
 
     private float mapHeight(float height)
     {
+        float newHeight;
         //float logBase = 10;
         //float newHeight = Mathf.Log(Mathf.Abs(height) * (logBase - 1) + 1, logBase) * Mathf.Sign(height);
         //newHeight = (newHeight + Mathf.Log(Mathf.Abs(1) * (logBase - 1) + 1, logBase)) / 2;
         //float newHeight = Mathf.Log(Mathf.Abs(height) * 1024, 2) / 10 * Mathf.Sign(height);
+        if (height < 0)
+        {
+            newHeight = 0.5f;
+        } else
+        {
+            newHeight = (1 - Mathf.Pow(1 - Mathf.Abs(height), 3)) * Mathf.Sign(height);
+            newHeight = (newHeight + 1) / 2;
 
-        float newHeight = (1 - Mathf.Pow(1 - Mathf.Abs(height), 3)) * Mathf.Sign(height);
-        newHeight = (newHeight + 1) / 2;
+            //float newHeight = Mathf.Pow(height, 3);
+            //float newHeight = height;
+        }
 
-        //float newHeight = Mathf.Pow(height, 3);
-        //float newHeight = height;
         newHeight *= heightScale;
 
         if (newHeight < 0.001f)
@@ -77,7 +85,7 @@ public class Tile : MonoBehaviour
 
     private void setValNow(float val)
     {
-        updateClrByVal(val);
+       // updateClrByVal(val);
     }
 
     public void setColor(Color clr)
@@ -92,7 +100,21 @@ public class Tile : MonoBehaviour
         
     }
 
-    private Color clrByVal(float val)
+    private Color clrByValHeight(float val, float height)
+    {
+        Color clr = clrByVal(val, posClr, negClr);
+        Color hclr = clrByVal(height, hPosClr, hNegClr);
+
+        clr = (Mathf.Abs(val) * clr + (1 - Mathf.Abs(val)) * hclr) / 2;
+        //if (targetVal != null && Mathf.Abs(targetVal.Value) < 0.2f)
+        //{
+        //    clr = hclr;
+        //}
+
+        return clr;
+    }
+
+    private Color clrByVal(float val, Color posClr, Color negClr)
     {
         Color clr;
         // clrPos * (currVal) + clrNeg*(1-currVal);
@@ -105,18 +127,20 @@ public class Tile : MonoBehaviour
         else if (val > 0)
         {
             clr = posClr * (val * (1 - clrMin) + clrMin);
+            //clr = (clr * (1 - Mathf.Abs(val)) + (Mathf.Abs(val)) * hPosClr) / 2;
         }
         else
         {
             clr = negClr * (val * -1 * (1 - clrMin) + clrMin);
+            //clr = (clr * (1-Mathf.Abs(val)) + (Mathf.Abs(val)) * hNegClr) / 2;
         }
 
         return clr;
     }
 
-    private void updateClrByVal(float val)
+    private void updateClrByVal(float val, float height)
     {
-        Color currClr = clrByVal(val);
+        Color currClr = clrByValHeight(val, height);
         currClr.a = 1;
         setColor(currClr);
     }
@@ -125,19 +149,23 @@ public class Tile : MonoBehaviour
     {
         float dt = Time.deltaTime;
         timeSinceSet += dt;
+        float height = prevHeight;
+        float val = prevVal;
         if (timeSinceSet >= animTime)
         {
             if (targetHeight != null)
             {
                 setHeightNow(targetHeight.Value);
                 prevHeight = targetHeight.Value;
+                height = targetHeight.Value;
                 targetHeight = null;
             }
 
             if (targetVal != null)
             {
-                setValNow(targetVal.Value);
+                //setValNow(targetVal.Value);
                 prevVal = targetVal.Value;
+                val = targetVal.Value;
                 targetVal = null;
             }
         }
@@ -146,13 +174,16 @@ public class Tile : MonoBehaviour
             float percent = timeSinceSet / animTime;
             if (targetHeight != null)
             {
-                setHeightNow(prevHeight + (targetHeight.Value - prevHeight) * percent);
+                height = prevHeight + (targetHeight.Value - prevHeight) * percent;
+                setHeightNow(height);
             }
 
             if (targetVal != null)
             {
-                setValNow(prevVal + (targetVal.Value - prevVal) * percent);
+                val = prevVal + (targetVal.Value - prevVal) * percent;
+                //setValNow(val);
             }
         }
+        updateClrByVal(val, height);
     }
 }
