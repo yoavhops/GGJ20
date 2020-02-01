@@ -611,8 +611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a1af507214f024596e73230f0fcb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 100
-  Height: 100
+  Width: 50
+  Height: 50
   DebugDiffuseAble: []
   WaterSources: {fileID: 8653598414958289123, guid: f35deb580ba43af46984f83fce46a8ba,
     type: 3}
