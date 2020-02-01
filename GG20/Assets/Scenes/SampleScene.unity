@@ -611,8 +611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a1af507214f024596e73230f0fcb3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 50
-  Height: 50
+  Width: 100
+  Height: 100
   DebugDiffuseAble: []
   WaterSources: {fileID: 8653598414958289123, guid: f35deb580ba43af46984f83fce46a8ba,
     type: 3}
@@ -622,6 +622,24 @@ MonoBehaviour:
   - {x: 25, y: 25}
   CitySources:
   - {x: 40, y: 40}
+  - {x: 12, y: 37}
+  - {x: 11, y: 11}
+  ColdSources:
+  - {x: 50, y: 0}
+  - {x: 45, y: 1}
+  - {x: 55, y: 1}
+  - {x: 50, y: 99}
+  - {x: 45, y: 98}
+  - {x: 55, y: 98}
+  - {x: 84, y: 12}
+  - {x: 22, y: 79}
+  - {x: 37, y: 37}
+  - {x: 69, y: 72}
+  HotSources: []
+  SaltSources: []
+  NoSaltSources: []
+  NutrientsSources: []
+  NoNutrientsSource: []
   StartIteration: 50
 --- !u!1 &1385012021
 GameObject:
@@ -831,6 +849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TreeOffset: 1
   TreeTime: 1
+  ZonamiTime: 0.6
 --- !u!4 &1941629578
 Transform:
   m_ObjectHideFlags: 0

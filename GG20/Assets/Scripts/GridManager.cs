@@ -51,7 +51,7 @@ public class GridManager : MonoBehaviour
         DebugDiffuseAble.Add(TypeToDiffuse[typeof(Temperature)]);
         InitializeMap(TypeToDiffuse[typeof(Temperature)]);
 
-        TypeToDiffuse[typeof(Nutrients)] = new Nutrients(NutrientsSources, NoNutrientsSources);
+        TypeToDiffuse[typeof(Nutrients)] = new Nutrients(NutrientsSources, NoNutrientsSource);
         DebugDiffuseAble.Add(TypeToDiffuse[typeof(Nutrients)]);
         InitializeMap(TypeToDiffuse[typeof(Nutrients)]);
 
