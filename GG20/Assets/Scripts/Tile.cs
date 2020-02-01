@@ -23,6 +23,8 @@ public class Tile : MonoBehaviour
 
     public float mergeVal = 0.05f;
 
+    private Transform cube;
+
     public void setPos(Vector3 pos)
     {
         transform.localPosition = pos;
@@ -90,14 +92,13 @@ public class Tile : MonoBehaviour
 
     public void setColor(Color clr)
     {
-        Transform cube = transform.Find("Cube");
         cube.GetComponent<Renderer>().material.SetColor("_Color", clr);
     }
 
     
     void Start()
     {
-        
+         cube = transform.Find("Cube");
     }
 
     private Color clrByValHeight(float val, float height)
@@ -145,9 +146,9 @@ public class Tile : MonoBehaviour
         setColor(currClr);
     }
     
-    void Update()
+    public void UpdateTile(float dt)
     {
-        float dt = Time.deltaTime;
+        //float dt = Time.deltaTime;
         timeSinceSet += dt;
         float height = prevHeight;
         float val = prevVal;
