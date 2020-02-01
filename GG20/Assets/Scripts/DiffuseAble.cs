@@ -51,7 +51,17 @@ public class DiffuseAble
         }
     }
 
-    public float GetValueForColor(int x, int y)
+    public void AddEffect(Effect effect)
+    {
+        Effects.Add(effect);
+    }
+
+    public float GetValueWithOutEffects(int x, int y)
+    {
+        return Grid[x].L[y];
+    }
+
+    public float GetValueWithEffects(int x, int y)
     {
         var ans = Grid[x].L[y];
         var origValue = ans;
@@ -60,7 +70,7 @@ public class DiffuseAble
 
         foreach (var effects in Effects)
         {
-            ans += effects.GetEffectValueForColor(x, y, origValue);
+            ans += effects.GetEffectValue(x, y, origValue);
         }
 
         return Math.Min(ans, 1);
