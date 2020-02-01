@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    private MaterialPropertyBlock propertyBlock;
+    private Renderer myRenderer;
     private float timeSinceSet = 0;
 
     private float prevHeight = 0;
@@ -22,6 +24,12 @@ public class Tile : MonoBehaviour
     public float clrMin = 0.4f;
 
     public float mergeVal = 0.05f;
+
+    void Awake()
+    {
+        myRenderer = GetComponentInChildren<Renderer>();
+        propertyBlock = new MaterialPropertyBlock();
+    }
 
     public void setPos(Vector3 pos)
     {
@@ -90,8 +98,8 @@ public class Tile : MonoBehaviour
 
     public void setColor(Color clr)
     {
-        Transform cube = transform.Find("Cube");
-        cube.GetComponent<Renderer>().material.SetColor("_Color", clr);
+        propertyBlock.SetColor("_Color", clr);
+        myRenderer.SetPropertyBlock(propertyBlock);
     }
 
     
