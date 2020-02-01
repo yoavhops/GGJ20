@@ -7,7 +7,15 @@ using UnityEngine;
 [Serializable]
 public class Tree : DiffuseAble
 {
-    public static float GrowthRate = 0.00f;
+    public float TreesMaxHeight;
+    public float TreeMinHeight;
+    public float TreesMaxTemp;
+    public float TreeMinTemp;
+    public float TreesMaxSalt;
+    public float TreeMaxHydration;
+    public float TreeMinHydration;
+
+    public static float GrowthRate = 0.01f;
 
     public Tree(List<Vector2Int> positiveSources, List<Vector2Int> negativeSources):
         base(positiveSources, negativeSources)

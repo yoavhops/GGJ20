@@ -13,6 +13,12 @@ public class Skill : MonoBehaviour
     public List<Skill> requiredSkills;
     public bool isLocked = true;
 
+    public float effectOnHot;
+    public float effectOnCold;
+    public float effectOnSalt;
+    public float effectOnHydration;
+    public float effectOnHeight;
+    public float effectOnNutrients;
 
     private int points = 10; //TODO::get actual points
 

@@ -31,6 +31,9 @@ public class GridManager : MonoBehaviour
     public List<Vector2Int> NutrientsSources;
     public List<Vector2Int> NoNutrientsSource;
 
+    public List<Vector2Int> HydrationSources;
+    public List<Vector2Int> DrySource;
+
     public int StartIteration = 50;
     //public float DampFactor = 0.9f;
 
@@ -50,6 +53,10 @@ public class GridManager : MonoBehaviour
         TypeToDiffuse[typeof(Temperature)] = new Temperature(HotSources, ColdSources);
         DebugDiffuseAble.Add(TypeToDiffuse[typeof(Temperature)]);
         InitializeMap(TypeToDiffuse[typeof(Temperature)]);
+
+        TypeToDiffuse[typeof(Hydration)] = new Hydration(HydrationSources, DrySource);
+        DebugDiffuseAble.Add(TypeToDiffuse[typeof(Hydration)]);
+        InitializeMap(TypeToDiffuse[typeof(Hydration)]);
 
         TypeToDiffuse[typeof(Nutrients)] = new Nutrients(NutrientsSources, NoNutrientsSource);
         DebugDiffuseAble.Add(TypeToDiffuse[typeof(Nutrients)]);
