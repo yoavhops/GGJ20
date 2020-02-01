@@ -36,7 +36,7 @@ public class DiffuseAble
         {
             if (source.x < GridManager.Singleton.Width && source.y < GridManager.Singleton.Height)
             {
-                Grid[source.x].L[source.y] = UnityEngine.Random.Range(0.2f, 1);
+                Grid[source.x].L[source.y] = UnityEngine.Random.Range(0.6f, 1);
                 Sources.Add(source);
             }
         }
