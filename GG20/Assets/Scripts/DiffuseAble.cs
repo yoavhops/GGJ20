@@ -18,6 +18,8 @@ public class DiffuseAble
 
     protected DiffuseAble(List<Vector2Int> positiveSources, List<Vector2Int> negativeSources)
     {
+        Debug.Log("Is parent first?");
+
         PositiveSources = positiveSources;
         NegativeSources = negativeSources;
 
@@ -49,6 +51,12 @@ public class DiffuseAble
                 Sources.Add(source);
             }
         }
+    }
+
+    public void SetValue(int x, int y, float value)
+    {
+        value = Mathf.Clamp(value, -1f, 1f);
+        Grid[x].L[y] = value;
     }
 
     public void AddEffect(Effect effect)
