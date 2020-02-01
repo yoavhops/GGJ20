@@ -13,12 +13,18 @@ public class Skill : MonoBehaviour
     public List<Skill> requiredSkills;
     public bool isLocked = true;
 
-    public float effectOnHot;
-    public float effectOnCold;
-    public float effectOnSalt;
-    public float effectOnHydration;
-    public float effectOnHeight;
-    public float effectOnNutrients;
+    public float effectOnMaxHot;
+    public float effectOnMaxSalt;
+    public float effectOnMaxHydration;
+    public float effectOnMaxHeight;
+    public float effectOnMaxNutrients;
+
+    public float effectOnMinHot;
+    public float effectOnMinHydration;
+    public float effectOnMinHeight;
+    public float effectOnMinNutrients;
+
+    private Tree _treeDiffuse;
 
     private bool isLearned = false;
     public int Price;
@@ -38,6 +44,8 @@ public class Skill : MonoBehaviour
         skillImage = GetComponent<Image>();
 
         skillImage.color = ColorSkillSetting.singleton.colorLocked;
+
+        _treeDiffuse = (Tree)GridManager.Singleton.TypeToDiffuse[typeof(Tree)];
     }
 
     private void Update()
@@ -52,6 +60,7 @@ public class Skill : MonoBehaviour
         }
 
     }
+
 
     public void OnClick()
     {
@@ -72,8 +81,6 @@ public class Skill : MonoBehaviour
         }
     }
 
-
-
     void OnLearned()
     {
         skillState = SkillState.Learned;
@@ -84,6 +91,20 @@ public class Skill : MonoBehaviour
 
         skillImage.color = ColorSkillSetting.singleton.colorLearned;
 
+        FireSkillEffects();
+
+    }
+
+    private void FireSkillEffects()
+    {
+        _treeDiffuse.TreeMaxHeight += effectOnMaxHeight;
+        _treeDiffuse.TreeMaxHydration += effectOnMaxHydration;
+        _treeDiffuse.TreeMaxSalt += effectOnMaxSalt;
+        _treeDiffuse.TreeMaxTemp += effectOnMaxHot;
+
+        _treeDiffuse.TreeMinHeight -= effectOnMinHeight;
+        _treeDiffuse.TreeMinHydration -= effectOnMinHydration;
+        _treeDiffuse.TreeMinTemp -= effectOnMinHot;
     }
 
     void OnAvailable()
