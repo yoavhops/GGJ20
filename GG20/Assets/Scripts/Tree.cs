@@ -7,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public class Tree : DiffuseAble
 {
-    public static float GrowthRate = 0.01f;
+    public static float GrowthRate = 0.00f;
 
     public Tree(List<Vector2Int> positiveSources, List<Vector2Int> negativeSources):
         base(positiveSources, negativeSources)
