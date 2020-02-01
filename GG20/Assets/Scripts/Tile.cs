@@ -109,7 +109,7 @@ public class Tile : MonoBehaviour
     
     void Start()
     {
-         cube = transform.Find("Cube");
+         
     }
 
     private Color clrByValHeight(float val, float height)
