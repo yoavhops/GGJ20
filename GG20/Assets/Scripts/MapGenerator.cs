@@ -5,6 +5,7 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     public GameObject tile;
+    public GameObject carbonPoint;
 
     private float Width = 20;
     private float Height = 20;
@@ -117,10 +118,12 @@ public class MapGenerator : MonoBehaviour
                 if (currCityVal > 0)
                 {
                     //currCityVal *= -1;
-                    currCityVal = currCityVal * Time.deltaTime / 20;
+                    currCityVal = currCityVal * Time.deltaTime / 200;
                     if (Random.Range(0f,1f) < currCityVal)
                     {
                         //Debug.Log("POINT POP AT: " + x + "," + y);
+                        GameObject carbonPointObj = Instantiate(carbonPoint);
+                        carbonPointObj.transform.position = currTile.transform.position;
                     }
                 }
 
