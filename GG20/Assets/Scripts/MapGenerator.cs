@@ -126,9 +126,9 @@ public class MapGenerator : MonoBehaviour
                 float currVal = valLst.GetValueWithEffects(x, y);
 
                 float currCityVal = treeCityMap.GetValueWithEffects(x,y);
-                if (currCityVal > 0)
+                if (currCityVal < 0)
                 {
-                    //currCityVal *= -1;
+                    currCityVal *= -1;
                     currCityVal = currCityVal * Time.deltaTime / 200;
                     if (Random.Range(0f,1f) < currCityVal)
                     {
