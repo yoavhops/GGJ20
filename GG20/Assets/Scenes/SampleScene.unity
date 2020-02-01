@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -386,7 +386,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9297b00bcb55a1944877da9b6a264bbd,
+      objectReference: {fileID: 21300000, guid: 3069ad4f32f48914ab6527cd1187bb87,
         type: 3}
     - target: {fileID: 1004341912841950920, guid: b79bee176375b2c4db7e0b1c4af37a9b,
         type: 3}
@@ -427,7 +427,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1c805a85a8ec79b41bc1d877015b3d85,
+      objectReference: {fileID: 21300000, guid: c61d57bfecb5f61458bc12fec76660c6,
         type: 3}
     - target: {fileID: 1004341912864005812, guid: b79bee176375b2c4db7e0b1c4af37a9b,
         type: 3}
@@ -589,7 +589,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 74f1522db0655e44b98a724d7bf0acbf,
+      objectReference: {fileID: 21300000, guid: 264abe718734df643902b1d6d1208f4c,
         type: 3}
     - target: {fileID: 1004341913377755268, guid: b79bee176375b2c4db7e0b1c4af37a9b,
         type: 3}
@@ -1052,7 +1052,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 74f1522db0655e44b98a724d7bf0acbf,
+      objectReference: {fileID: 21300000, guid: 8254acb40e9f44e4ea6b3a7356a5e4c4,
         type: 3}
     - target: {fileID: 1004341913987039711, guid: b79bee176375b2c4db7e0b1c4af37a9b,
         type: 3}
@@ -1235,7 +1235,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b09ff72569f8ece4fa3188b8cf5aaa75,
+      objectReference: {fileID: 21300000, guid: 39e4c2c61f4f45b47b885ec406267985,
         type: 3}
     - target: {fileID: 1004341914390008466, guid: b79bee176375b2c4db7e0b1c4af37a9b,
         type: 3}
@@ -1246,7 +1246,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 74f1522db0655e44b98a724d7bf0acbf,
+      objectReference: {fileID: 21300000, guid: 0b05b736c66cc854bbadd823bf406d6c,
         type: 3}
     - target: {fileID: 1004341914461455166, guid: b79bee176375b2c4db7e0b1c4af37a9b,
         type: 3}
@@ -1377,7 +1377,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1c805a85a8ec79b41bc1d877015b3d85,
+      objectReference: {fileID: 21300000, guid: 03df30cc22d7fe4469a113c2b45a2271,
         type: 3}
     - target: {fileID: 1004341914622508799, guid: b79bee176375b2c4db7e0b1c4af37a9b,
         type: 3}
@@ -1824,13 +1824,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3551909, y: 0.28470212, z: -0.11452429, w: 0.88298833}
-  m_LocalPosition: {x: 7.8, y: 43, z: 0.8}
+  m_LocalRotation: {x: 0.43593806, y: 0, z: 0, w: 0.8999767}
+  m_LocalPosition: {x: 20.2, y: 42.3, z: -8.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 43.826, y: 35.742, z: 0}
+  m_LocalEulerAnglesHint: {x: 51.69, y: 0, z: 0}
 --- !u!114 &981022812 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1004341913159022762, guid: b79bee176375b2c4db7e0b1c4af37a9b,
@@ -1998,9 +1998,9 @@ MonoBehaviour:
   TreeSources:
   - {x: 25, y: 25}
   CitySources:
-  - {x: 40, y: 40}
-  - {x: 12, y: 37}
-  - {x: 11, y: 11}
+  - {x: 40, y: 30}
+  - {x: 8, y: 37}
+  - {x: 11, y: 10}
   ColdSources:
   - {x: 25, y: 0}
   - {x: 23, y: 1}
@@ -2197,7 +2197,7 @@ MonoBehaviour:
     type: 3}
   heightScale: 0.1
   clrMin: 0.4
-  mergeVal: 0.1
+  mergeVal: 0.01
   animTimeSec: 1.5
   heightPosClr: {r: 0.8, g: 0.2, b: 0.1, a: 1}
   heightNegClr: {r: 0, g: 0, b: 1, a: 1}

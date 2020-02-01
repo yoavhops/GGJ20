@@ -26,12 +26,12 @@ public class Tree : DiffuseAble
     public static float GrowthRate = 0.001f;
     public float nutrientBonus = 0;
 
-    public float CityDamp = 0.2f;
+    public float CityDamp = 0.5f;
 
     public Tree(List<Vector2Int> positiveSources, List<Vector2Int> negativeSources):
         base(positiveSources, negativeSources)
     {
-        Damp = 0.02f;
+        Damp = 0.3f;
     }
 
     protected override void Diffuse(int x, int y, float Damp)
