@@ -6,6 +6,7 @@ public class CarbonPointHandler : MonoBehaviour
 {
     private void onClick()
     {
+        PointManager.singleton.addPoints(1);
         Destroy(gameObject);
     }
 

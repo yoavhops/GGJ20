@@ -51,6 +51,12 @@ public class DiffuseAble
         }
     }
 
+    public void addSource(Vector2Int pos)
+    {
+        Grid[pos.x].L[pos.y] = UnityEngine.Random.Range(0.2f, 1);
+        Sources.Add(pos);
+    }
+
     public void SetValue(int x, int y, float value)
     {
         value = Mathf.Clamp(value, -1f, 1f);

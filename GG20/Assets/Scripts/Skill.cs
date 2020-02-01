@@ -20,8 +20,6 @@ public class Skill : MonoBehaviour
     public float effectOnHeight;
     public float effectOnNutrients;
 
-    private int points = 10; //TODO::get actual points
-
     private bool isLearned = false;
     public int Price;
 
@@ -81,7 +79,7 @@ public class Skill : MonoBehaviour
         skillState = SkillState.Learned;
 
         isLearned = true;
-        points -= Price; //TODO::
+        PointManager.singleton.addPoints(-Price);
         Debug.Log("Learned SKILL!");
 
         skillImage.color = ColorSkillSetting.singleton.colorLearned;
@@ -112,7 +110,7 @@ public class Skill : MonoBehaviour
 
     private bool DoesUserHaveEnoughPoints()
     {
-        return Price <= points;
+        return Price <= PointManager.singleton.getPoints();
     }
 
 

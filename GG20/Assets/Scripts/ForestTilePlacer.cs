@@ -33,8 +33,11 @@ public class ForestTilePlacer : MonoBehaviour
         {
             Vector2Int pos = new Vector2Int((int)hitGO.transform.parent.position.x, (int)hitGO.transform.parent.position.z);
             Debug.Log("Adding source at: " + pos);
-            GridManager.Singleton.TreeSources.Add(pos);
-            Destroy(gameObject);
+            if (((Tree)GridManager.Singleton.TypeToDiffuse[typeof(Tree)]).CanTreesGrow(pos.x, pos.y))
+            {
+                ((Tree)GridManager.Singleton.TypeToDiffuse[typeof(Tree)]).addSource(pos);
+                Destroy(gameObject);
+            }
         }
     }
 }
