@@ -27,6 +27,7 @@ public class MapGenerator : MonoBehaviour
     private Color treePosClr = new Color(0, 1, 0);
     private Color treeNegClr = new Color(0.4f, 0.4f, 0.4f);
 
+    DiffuseAble heightMap, treeCityMap;
  
 
     public void setTreeMap()
@@ -45,13 +46,14 @@ public class MapGenerator : MonoBehaviour
 
     public void updateMap(bool setHeight)
     {
+        updateLists();
         if (currMap == 0)
         {
-            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Height)], heightPosClr, heightNegClr, 0, setHeight);
+            setTiles(heightMap, heightMap, heightPosClr, heightNegClr, 0, setHeight);
         }
         else if (currMap == 1)
         {
-            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Tree)], treePosClr, treeNegClr, 2, setHeight);
+            setTiles(heightMap, treeCityMap, treePosClr, treeNegClr, 2, setHeight);
         }
     }
 
@@ -76,6 +78,17 @@ public class MapGenerator : MonoBehaviour
                 float currHeight = heightLst.GetValueWithOutEffects(x, y);
                 float currHeightVal = heightLst.GetValueWithEffects(x, y); // for color
                 float currVal = valLst.GetValueWithEffects(x, y);
+
+                float currCityVal = treeCityMap.GetValueWithEffects(x,y);
+                if (currCityVal > 0)
+                {
+                    //currCityVal *= -1;
+                    currCityVal = currCityVal * Time.deltaTime / 20;
+                    if (Random.Range(0f,1f) < currCityVal)
+                    {
+                        Debug.Log("POINT POP AT: " + x + "," + y);
+                    }
+                }
 
                 //float currHeight = mapHeight(currVal);
                 //Debug.Log("2gen tile " + x + "," + y + " val: " + currVal);
@@ -124,6 +137,12 @@ public class MapGenerator : MonoBehaviour
         updateTiles(heightLst, valLst, clrPos, clrNeg, clrMergeOption, setHeight);
     }
 
+    private void updateLists()
+    {
+        heightMap = GridManager.Singleton.TypeToDiffuse[typeof(Height)];
+        treeCityMap = GridManager.Singleton.TypeToDiffuse[typeof(Tree)];
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -138,7 +157,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
         */
-        
+
         //genTiles(GridManager.Singleton.Grid, new Color(0.8f, 0.2f, 0.1f), new Color(0,0,1));
     }
 
