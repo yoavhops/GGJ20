@@ -7,6 +7,8 @@ public class WindowOfTreeSelection : MonoBehaviour
 {
     public GameObject PanelFullScreen;
     public GameObject SkillPanel;
+    public GameObject background;
+    public GameObject backgroundFrame;
     private bool panelCheck;
     public Button skillTree;
     void Start()
@@ -87,11 +89,15 @@ public class WindowOfTreeSelection : MonoBehaviour
 
             {
             SkillPanel.SetActive(false);
-            }
+            background.SetActive(false);
+            backgroundFrame.SetActive(false);
+        }
         else
            {
             SkillPanel.SetActive(true);
-           }
+            background.SetActive(true);
+            backgroundFrame.SetActive(true);
+        }
     }
 
 }
