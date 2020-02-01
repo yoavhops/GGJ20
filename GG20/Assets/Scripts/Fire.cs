@@ -5,13 +5,12 @@ using System.Linq;
 using UnityEngine;
 
 [Serializable]
-public class Zonami : Effect
+public class Fire : Effect
 {
-    private const float MaxHeight = 0.2f;
     private const float EffectTime = 3f;
-    private const int EffectDistance = 10;
-    private const float EffectRingSize = 2.5f;
-    private const float EffectValue = 1f;
+    private const int EffectDistance = 3;
+    private const float EffectValue = 0.1f;
+    private const float NewFireSource = 0.1f;
 
     public Vector2Int OrigPos;
 
@@ -62,12 +61,10 @@ public class Zonami : Effect
 
         if (i > 0)
             Offsets.RemoveRange(0, i);
+        
+        //TODO AddMoreFire
+        //if (R)
 
-        /*
-        if (Math.Abs(bestDistance - currentDistance) < EffectRingSize)
-        {
-            return EffectValue;
-        }*/
     }
 
     private void Act(Vector2Int pos)
@@ -75,7 +72,14 @@ public class Zonami : Effect
         if (!GridManager.Singleton.InRange(pos.x, pos.y))
             return;
 
-        GridManager.Singleton.TypeToDiffuse[typeof(Hydration)].AddEffectValue(pos, EffectValue);
+        GridManager.Singleton.TypeToDiffuse[typeof(Temperature)].AddEffectValue(pos, EffectValue * Time.deltaTime);
+    }
+
+    private void AddMoreFire()
+    {
+        //var fire = new GameObject().AddComponent<Fire>();
+        //fire.Init( OrigPos.x + Random.Range(-EffectDistance, EffectDistance), OrigPos.y + Random.Range(-EffectDistance, EffectDistance));
+        //GridManager.Singleton.TypeToDiffuse[typeof(Height)].AddEffect(fire);
     }
 
 
