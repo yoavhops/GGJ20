@@ -67,9 +67,9 @@ public class Tile : MonoBehaviour
 
     public void setHeight(float height)
     {
-        timeSinceSet = 0;
         if (targetHeight != null)
         {
+            timeSinceSet = 0;
             prevHeight = targetHeight.Value;
         }
         targetHeight = height;
@@ -77,11 +77,15 @@ public class Tile : MonoBehaviour
 
     public void setVal(float val)
     {
+        prevVal = val;
+        targetVal = val;
+        /*
         if (targetVal != null)
         {
             prevVal = targetVal.Value;
         }
         targetVal = val;
+        */
     }
 
     private void setHeightNow(float height)
@@ -105,7 +109,7 @@ public class Tile : MonoBehaviour
     
     void Start()
     {
-        
+         
     }
 
     private Color clrByValHeight(float val, float height)
@@ -153,9 +157,9 @@ public class Tile : MonoBehaviour
         setColor(currClr);
     }
     
-    void Update()
+    public void UpdateTile(float dt)
     {
-        float dt = Time.deltaTime;
+        //float dt = Time.deltaTime;
         timeSinceSet += dt;
         float height = prevHeight;
         float val = prevVal;
@@ -168,7 +172,7 @@ public class Tile : MonoBehaviour
                 height = targetHeight.Value;
                 targetHeight = null;
             }
-
+            /*
             if (targetVal != null)
             {
                 //setValNow(targetVal.Value);
@@ -176,6 +180,7 @@ public class Tile : MonoBehaviour
                 val = targetVal.Value;
                 targetVal = null;
             }
+            */
         }
         else
         {
@@ -186,11 +191,13 @@ public class Tile : MonoBehaviour
                 setHeightNow(height);
             }
 
+            /*
             if (targetVal != null)
             {
                 val = prevVal + (targetVal.Value - prevVal) * percent;
                 //setValNow(val);
             }
+            */
         }
         updateClrByVal(val, height);
     }

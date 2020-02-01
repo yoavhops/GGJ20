@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class Zonami : Effect
 {
-    private const float MaxHeight = 0.2f;
+    private const float MaxHeight = 0.1f;
     private const float EffectTime = 3f;
     private const float EffectDistance = 10f;
     private const float EffectRingSize = 2.5f;

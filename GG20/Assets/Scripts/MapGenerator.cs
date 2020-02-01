@@ -47,22 +47,22 @@ public class MapGenerator : MonoBehaviour
     {
         if (currMap == 0)
         {
-            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)].Grid, GridManager.Singleton.TypeToDiffuse[typeof(Height)].Grid, heightPosClr, heightNegClr);
+            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Height)], heightPosClr, heightNegClr);
         }
         else if (currMap == 1)
         {
-            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)].Grid, GridManager.Singleton.TypeToDiffuse[typeof(Tree)].Grid, treePosClr, treeNegClr);
+            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Tree)], treePosClr, treeNegClr);
         }
     }
 
-    public void updateTiles(List<SerList> heightLst, List<SerList> valLst, Color clrPos, Color clrNeg)
+    public void updateTiles(DiffuseAble heightLst, DiffuseAble valLst, Color clrPos, Color clrNeg)
     {
         //float heightMult = (lst.Count + lst[0].L.Count) / 2 * heightScale;
         
-        for (int x = 0; x < heightLst.Count; x++)
+        for (int x = 0; x < GridManager.Singleton.Width; x++)
         {
 
-            for (int y = 0; y < heightLst[x].L.Count; y++)
+            for (int y = 0; y < GridManager.Singleton.Height; y++)
             {
                 Tile currTile = tileList[x][y];
 
@@ -71,8 +71,8 @@ public class MapGenerator : MonoBehaviour
 
                 //Tile tileHandler = currTile.GetComponent<Tile>();
 
-                float currHeight = heightLst[x].L[y];
-                float currVal = valLst[x].L[y];
+                float currHeight = heightLst.GetValueWithOutEffects(x, y);
+                float currVal = valLst.GetValueWithEffects(x, y);
 
                 //float currHeight = mapHeight(currVal);
                 //Debug.Log("2gen tile " + x + "," + y + " val: " + currVal);
@@ -84,19 +84,19 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public void genTiles(List<SerList> lst, Color clrPos, Color clrNeg)
+    public void genTiles(DiffuseAble lst, Color clrPos, Color clrNeg)
     {
         tileList = new List<List<Tile>>();
-        for (int x=0; x<lst.Count; x++)
+        for (int x=0; x<GridManager.Singleton.Width; x++)
         {
             tileList.Add(new List<Tile>());
-            for (int y=0; y<lst[x].L.Count; y++)
+            for (int y=0; y<GridManager.Singleton.Height; y++)
             {
                 GameObject currTile = Instantiate(tile);
                 Tile tileHandler = currTile.GetComponent<Tile>();
                 tileHandler.hPosClr = clrPos;
                 tileHandler.hNegClr = clrNeg;
-                tileHandler.heightScale = (lst.Count + lst[0].L.Count) / 2 * heightScale;
+                tileHandler.heightScale = (GridManager.Singleton.Width + GridManager.Singleton.Height) / 2 * heightScale;
                 tileHandler.animTime = animTimeSec;
                 tileHandler.clrMin = clrMin;
                 tileHandler.mergeVal = mergeVal;
@@ -107,7 +107,7 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public void setTiles(List<SerList> heightLst, List<SerList> valLst, Color clrPos, Color clrNeg)
+    public void setTiles(DiffuseAble heightLst, DiffuseAble valLst, Color clrPos, Color clrNeg)
     {
         if (tileList == null)
         {
@@ -138,6 +138,15 @@ public class MapGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //UpdateTile
+        for (int x = 0; x < tileList.Count; x++)
+        {
+
+            for (int y = 0; y < tileList[x].Count; y++)
+            {
+                Tile currTile = tileList[x][y];
+                currTile.UpdateTile(Time.deltaTime);
+            }
+        }
     }
 }
