@@ -40,22 +40,22 @@ public class MapGenerator : MonoBehaviour
     private void changeSource(int src)
     {
         currMap = src;
-        updateMap();
+        updateMap(false);
     }
 
-    public void updateMap()
+    public void updateMap(bool setHeight)
     {
         if (currMap == 0)
         {
-            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Height)], heightPosClr, heightNegClr, 0);
+            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Height)], heightPosClr, heightNegClr, 0, setHeight);
         }
         else if (currMap == 1)
         {
-            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Tree)], treePosClr, treeNegClr, 2);
+            setTiles(GridManager.Singleton.TypeToDiffuse[typeof(Height)], GridManager.Singleton.TypeToDiffuse[typeof(Tree)], treePosClr, treeNegClr, 2, setHeight);
         }
     }
 
-    public void updateTiles(DiffuseAble heightLst, DiffuseAble valLst, Color clrPos, Color clrNeg, int clrMergeOption)
+    public void updateTiles(DiffuseAble heightLst, DiffuseAble valLst, Color clrPos, Color clrNeg, int clrMergeOption, bool setHeight)
     {
         //float heightMult = (lst.Count + lst[0].L.Count) / 2 * heightScale;
         
@@ -80,7 +80,10 @@ public class MapGenerator : MonoBehaviour
                 //float currHeight = mapHeight(currVal);
                 //Debug.Log("2gen tile " + x + "," + y + " val: " + currVal);
 
-                currTile.setHeight(currHeight);
+                if (setHeight)
+                {
+                    currTile.setHeight(currHeight);
+                }
                 currTile.setHeightVal(currHeightVal);
                 currTile.setVal(currVal);
                 //currTile.setColor(currClr);
@@ -111,14 +114,14 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public void setTiles(DiffuseAble heightLst, DiffuseAble valLst, Color clrPos, Color clrNeg, int clrMergeOption)
+    public void setTiles(DiffuseAble heightLst, DiffuseAble valLst, Color clrPos, Color clrNeg, int clrMergeOption, bool setHeight)
     {
         if (tileList == null)
         {
             genTiles(heightLst, heightPosClr, heightNegClr);
         }
 
-        updateTiles(heightLst, valLst, clrPos, clrNeg, clrMergeOption);
+        updateTiles(heightLst, valLst, clrPos, clrNeg, clrMergeOption, setHeight);
     }
 
     // Start is called before the first frame update

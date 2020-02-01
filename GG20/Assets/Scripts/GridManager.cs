@@ -55,7 +55,7 @@ public class GridManager : MonoBehaviour
         }
 
         mapGen = GameObject.Find("/Map").GetComponent<MapGenerator>();
-        mapGen.updateMap();
+        mapGen.updateMap(true);
     }
 
     // Update is called once per frame
