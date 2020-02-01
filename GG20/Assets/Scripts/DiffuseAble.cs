@@ -12,7 +12,7 @@ public class DiffuseAble
     public HashSet<Vector2Int> Sources;
     public List<Vector2Int> PositiveSources;
     public List<Vector2Int> NegativeSources;
-    public float Damp = 0.8f;
+    public float Damp = 0.1f;
 
     public List<Effect> Effects = new List<Effect>();
 
@@ -129,7 +129,7 @@ public class DiffuseAble
         }
     }
 
-    protected virtual void Diffuse(int x, int y)
+    protected virtual void Diffuse(int x, int y, float damp = 0.1f)
     {
         var avg = 0f;
         var gave = 0f;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClickManager : MonoBehaviour
 {
     public delegate void ClickDelegate();
-
+ 
     Dictionary<GameObject, ClickDelegate> clickHandlers = new Dictionary<GameObject, ClickDelegate>();
 
     public static ClickManager singleton;
@@ -28,6 +28,7 @@ public class ClickManager : MonoBehaviour
 
     void Update()
     {
+
         Vector3? clickPos = null;
         if (Input.GetMouseButtonDown(0))
         {

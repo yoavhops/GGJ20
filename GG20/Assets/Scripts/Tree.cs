@@ -26,17 +26,23 @@ public class Tree : DiffuseAble
     public static float GrowthRate = 0.001f;
     public float nutrientBonus = 0;
 
+    public float CityDamp = 0.2f;
+
     public Tree(List<Vector2Int> positiveSources, List<Vector2Int> negativeSources):
         base(positiveSources, negativeSources)
     {
-        
+        Damp = 0.02f;
     }
 
-    protected override void Diffuse(int x, int y)
+    protected override void Diffuse(int x, int y, float Damp)
     {
+        var damp = Damp;
+        if (Grid[x].L[y] >= 0f)
+        {
+            damp = CityDamp;
+        }
 
-
-        base.Diffuse(x, y);
+        base.Diffuse(x, y, damp);
 
         var saltValue = GridManager.Singleton.TypeToDiffuse[typeof(SaltLevels)].GetGridValue(x, y);
         var tempValue = GridManager.Singleton.TypeToDiffuse[typeof(Temperature)].GetGridValue(x, y);

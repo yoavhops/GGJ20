@@ -27,7 +27,7 @@ public class SaltLevels : DiffuseAble
 
     }
 
-    protected override void Diffuse(int x, int y)
+    protected override void Diffuse(int x, int y, float damp)
     {
         base.Diffuse(x, y);
     }

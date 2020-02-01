@@ -66,7 +66,6 @@ public class Skill : MonoBehaviour
 
     }
 
-
     public void OnClick()
     {
         if (!isLearned)
