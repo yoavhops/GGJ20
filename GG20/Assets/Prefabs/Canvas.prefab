@@ -118,7 +118,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341912787309655}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341912787309649}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341912787309649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +147,18 @@ MonoBehaviour:
   - {fileID: 1004341914242102924}
   - {fileID: 1004341914300887491}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0.01
+  effectOnNutrients: 0.005
+  effetOnDamp: 0.05
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 400
 --- !u!1 &1004341912799652444
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,8 +621,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9297b00bcb55a1944877da9b6a264bbd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -651,7 +673,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341912841950920}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341912841950922}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341912841950922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,7 +702,18 @@ MonoBehaviour:
   - {fileID: 1004341913315053968}
   - {fileID: 1004341914571913565}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0.01
+  SlowHumans: 0
+  Price: 300
 --- !u!1 &1004341912864005808
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,8 +780,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 1c805a85a8ec79b41bc1d877015b3d85, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -788,7 +832,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341912864005812}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341912864005814}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341912864005814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,7 +860,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914859324677}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0.1
+  effectOnMaxHydration: 0.01
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0.01
+  effectOnMinHeight: 0.005
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 500
 --- !u!1 &1004341912933494521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,7 +1639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4, y: -41.00006}
+  m_AnchoredPosition: {x: 4, y: -41.00003}
   m_SizeDelta: {x: -23.099854, y: -0.3907776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1004341913082374448
@@ -1678,8 +1744,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f47cb5a3251267f4db132c7ea70dc589, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1730,7 +1796,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913090373870}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913090373864}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913090373864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1748,7 +1825,18 @@ MonoBehaviour:
   - {fileID: 1004341913918103848}
   - {fileID: 1004341914080348254}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0.005
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0.005
+  effectOnMinHeight: 0.005
+  effectOnNutrients: 0
+  effetOnDamp: 0.005
+  effectOnGrowthRate: 0
+  SlowHumans: 0.005
+  Price: 1000
 --- !u!1 &1004341913121299392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,7 +2028,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913159022760}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913159022762}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913159022762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1957,7 +2056,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913377283980}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0.005
+  effectOnMinHydration: 0.05
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 300
 --- !u!1 &1004341913192750530
 GameObject:
   m_ObjectHideFlags: 0
@@ -2299,7 +2409,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913315053974}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913315053968}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913315053968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,6 +2437,17 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914715736435}
   isLocked: 1
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0.05
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
   Price: 0
 --- !u!1 &1004341913324945178
 GameObject:
@@ -2393,7 +2525,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Extra aminal
+  m_Text: Extra starch
 --- !u!1 &1004341913377283982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,7 +2672,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914591735597}
   isLocked: 0
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0.01
+  effectOnMinHot: 0.01
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 350
 --- !u!1 &1004341913377755271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,8 +2750,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 74f1522db0655e44b98a724d7bf0acbf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2659,7 +2802,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913377755268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913377755270}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913377755270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2676,7 +2830,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913987039705}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0.01
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0.01
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0.005
+  Price: 350
 --- !u!1 &1004341913437714916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,7 +2960,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913437714920}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913437714922}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913437714922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2812,7 +2988,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914859324677}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0.01
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0.01
+  effectOnMinHydration: 0.01
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 750
 --- !u!1 &1004341913455626212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,7 +3191,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913483117879}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913483117873}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913483117873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3021,6 +3219,17 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914622508793}
   isLocked: 1
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0.0025
+  effectOnMaxHeight: 0.005
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
   Price: 0
 --- !u!1 &1004341913530994924
 GameObject:
@@ -4139,7 +4348,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1004341913895308979
 MonoBehaviour:
@@ -4371,7 +4580,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913900857730}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913900857788}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913900857788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4388,7 +4608,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913993581660}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0.01
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 300
 --- !u!1 &1004341913911915420
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,7 +4811,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913915528882}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913915528876}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913915528876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4598,7 +4840,18 @@ MonoBehaviour:
   - {fileID: 1004341912787309649}
   - {fileID: 1004341914742971932}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0.015
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 450
 --- !u!1 &1004341913918103849
 GameObject:
   m_ObjectHideFlags: 0
@@ -4665,8 +4918,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9297b00bcb55a1944877da9b6a264bbd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4717,7 +4970,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913918103854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913918103848}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913918103848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4735,7 +4999,18 @@ MonoBehaviour:
   - {fileID: 1004341913483117873}
   - {fileID: 1004341912841950922}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 500
 --- !u!1 &1004341913943375064
 GameObject:
   m_ObjectHideFlags: 0
@@ -4854,7 +5129,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913943375069}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913943375071}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913943375071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4871,7 +5157,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913159022762}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0.005
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0.001
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0.001
+  Price: 500
 --- !u!1 &1004341913945331114
 GameObject:
   m_ObjectHideFlags: 0
@@ -4982,8 +5279,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 352, y: 197}
-  m_SizeDelta: {x: 80, y: 30}
+  m_AnchoredPosition: {x: 340.98, y: 175}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1004341913953137513
 CanvasRenderer:
@@ -5011,8 +5308,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0fc84985bbf8d2545a33c4cbe0b87ee9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5182,7 +5479,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913980560799}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913980560793}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913980560793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5198,6 +5506,17 @@ MonoBehaviour:
   skillState: 0
   requiredSkills: []
   isLocked: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
   Price: 0
 --- !u!1 &1004341913987039706
 GameObject:
@@ -5265,8 +5584,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 74f1522db0655e44b98a724d7bf0acbf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5317,7 +5636,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913987039711}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913987039705}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913987039705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5334,7 +5664,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914461455160}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0.025
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0.01
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 150
 --- !u!1 &1004341913991172451
 GameObject:
   m_ObjectHideFlags: 0
@@ -5480,6 +5821,17 @@ MonoBehaviour:
   skillState: 0
   requiredSkills: []
   isLocked: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
   Price: 0
 --- !u!1 &1004341913993581662
 GameObject:
@@ -5599,7 +5951,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341913993581602}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341913993581660}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341913993581660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5616,7 +5979,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913991172454}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0.05
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 125
 --- !u!1 &1004341914003833040
 GameObject:
   m_ObjectHideFlags: 0
@@ -6137,8 +6511,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7437f37f6385d8b438b1005571712231, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6189,7 +6563,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914080348252}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914080348254}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914080348254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6206,7 +6591,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914766753855}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0.01
+  Price: 450
 --- !u!1 &1004341914092012395
 GameObject:
   m_ObjectHideFlags: 0
@@ -6827,8 +7223,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 55202290cdb3c6040b072abf78e6cc7c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6879,7 +7275,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914242102930}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914242102924}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914242102924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6896,7 +7303,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914559631597}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0.02
+  effetOnDamp: 0.025
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 350
 --- !u!1 &1004341914274735719
 GameObject:
   m_ObjectHideFlags: 0
@@ -7165,7 +7583,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914289959425}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914289959431}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914289959431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7182,7 +7611,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913991172454}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0.01
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 100
 --- !u!1 &1004341914292695817
 GameObject:
   m_ObjectHideFlags: 0
@@ -7378,7 +7818,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914300887489}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914300887491}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914300887491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7395,6 +7846,17 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914390008464}
   isLocked: 1
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0.01
+  effectOnGrowthRate: 0
+  SlowHumans: 0
   Price: 0
 --- !u!1 &1004341914314734203
 GameObject:
@@ -7616,8 +8078,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b09ff72569f8ece4fa3188b8cf5aaa75, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7696,7 +8158,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913991172454}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0.05
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 100
 --- !u!1 &1004341914418893131
 GameObject:
   m_ObjectHideFlags: 0
@@ -7830,8 +8303,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 74f1522db0655e44b98a724d7bf0acbf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7882,7 +8355,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914461455166}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914461455160}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914461455160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7898,6 +8382,17 @@ MonoBehaviour:
   skillState: 0
   requiredSkills: []
   isLocked: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
   Price: 0
 --- !u!1 &1004341914480350780
 GameObject:
@@ -8248,7 +8743,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914559631603}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914559631597}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914559631597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8265,7 +8771,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914289959431}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0.02
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 200
 --- !u!1 &1004341914571913566
 GameObject:
   m_ObjectHideFlags: 0
@@ -8384,7 +8901,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914571913507}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914571913565}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914571913565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8401,7 +8929,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913980560793}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0.005
+  Price: 150
 --- !u!1 &1004341914582260275
 GameObject:
   m_ObjectHideFlags: 0
@@ -8620,6 +9159,17 @@ MonoBehaviour:
   skillState: 0
   requiredSkills: []
   isLocked: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
   Price: 0
 --- !u!1 &1004341914598865631
 GameObject:
@@ -8760,8 +9310,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 1c805a85a8ec79b41bc1d877015b3d85, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8812,7 +9362,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914622508799}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914622508793}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914622508793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8829,7 +9390,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914591735597}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0.005
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 350
 --- !u!1 &1004341914647802058
 GameObject:
   m_ObjectHideFlags: 0
@@ -9074,7 +9646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1004341914691756149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9252,7 +9824,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914715736433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914715736435}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914715736435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9269,7 +9852,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913980560793}
   isLocked: 0
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0.05
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 150
 --- !u!1 &1004341914739647332
 GameObject:
   m_ObjectHideFlags: 0
@@ -9461,7 +10055,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914742972130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914742971932}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914742971932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9478,7 +10083,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341914559631597}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0.005
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0.005
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0.005
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 400
 --- !u!1 &1004341914766753848
 GameObject:
   m_ObjectHideFlags: 0
@@ -9545,8 +10161,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 74f1522db0655e44b98a724d7bf0acbf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9597,7 +10213,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914766753853}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914766753855}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914766753855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9614,7 +10241,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913377755270}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0.01
+  effectOnMinHydration: 0
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0.01
+  Price: 400
 --- !u!1 &1004341914777557135
 GameObject:
   m_ObjectHideFlags: 0
@@ -9882,7 +10520,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004341914859324683}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004341914859324677}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1004341914859324677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9899,7 +10548,18 @@ MonoBehaviour:
   requiredSkills:
   - {fileID: 1004341913943375071}
   isLocked: 1
-  Price: 0
+  effectOnMaxHot: 0.0025
+  effectOnMaxSalt: 0
+  effectOnMaxHydration: 0
+  effectOnMaxHeight: 0
+  effectOnMinHot: 0
+  effectOnMinHydration: 0.0025
+  effectOnMinHeight: 0
+  effectOnNutrients: 0
+  effetOnDamp: 0
+  effectOnGrowthRate: 0
+  SlowHumans: 0
+  Price: 500
 --- !u!1 &1004341914892759767
 GameObject:
   m_ObjectHideFlags: 0
@@ -10136,7 +10796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &574809616110648587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10209,7 +10869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4957233288476544484
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10362,6 +11022,16 @@ PrefabInstance:
       propertyPath: SkillPanel
       value: 
       objectReference: {fileID: 1004341913082374451}
+    - target: {fileID: 7026696257827461783, guid: 84aaea0739618454b80f7d1a6b7b87b8,
+        type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 3420132021663233593}
+    - target: {fileID: 7026696257827461783, guid: 84aaea0739618454b80f7d1a6b7b87b8,
+        type: 3}
+      propertyPath: backgroundFrame
+      value: 
+      objectReference: {fileID: 5697315887317484810}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84aaea0739618454b80f7d1a6b7b87b8, type: 3}
 --- !u!4 &2994363909554943174 stripped

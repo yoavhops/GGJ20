@@ -9,7 +9,7 @@ public class Tree : DiffuseAble
 {
     public float TreeMaxHeight = 0.8f;
     public float TreeMinHeight = 0.0f;
-    public float TreeMaxTemp = 0.65f;
+    public float TreeMaxTemp = 0.6f;
     public float TreeMinTemp = -0.4f;
     public float TreeMaxSalt = 0.5f;
     public float TreeMaxHydration = 0.8f;
@@ -21,9 +21,10 @@ public class Tree : DiffuseAble
     public float CityMinTemp = -0.2f;
     public float CityMaxSalt = 0.65f;
     public float CityMaxHydration = 0.85f;
-    public float CityMinHydration = -0.7f;
+    public float CityMinHydration = -0.4f;
 
     public static float GrowthRate = 0.001f;
+    public float nutrientBonus = 0;
 
     public Tree(List<Vector2Int> positiveSources, List<Vector2Int> negativeSources):
         base(positiveSources, negativeSources)

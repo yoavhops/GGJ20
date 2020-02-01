@@ -17,12 +17,17 @@ public class Skill : MonoBehaviour
     public float effectOnMaxSalt;
     public float effectOnMaxHydration;
     public float effectOnMaxHeight;
-    public float effectOnMaxNutrients;
 
     public float effectOnMinHot;
     public float effectOnMinHydration;
     public float effectOnMinHeight;
-    public float effectOnMinNutrients;
+
+    public float effectOnNutrients;
+    public float effetOnDamp;
+
+    public float effectOnGrowthRate;
+    public float SlowHumans = 0;
+
 
     private Tree _treeDiffuse;
 
