@@ -5,10 +5,8 @@ using UnityEngine.UI;
 
 public class WindowOfTreeSelection : MonoBehaviour
 {
-    public GameObject PanelFullScreen;
     public GameObject SkillPanel;
-    public GameObject background;
-    public GameObject backgroundFrame;
+
     private bool panelCheck;
     public Button skillTree;
     void Start()
@@ -21,9 +19,8 @@ public class WindowOfTreeSelection : MonoBehaviour
 
     private void DisablePanel()
     {
-        PanelFullScreen.SetActive(false);
+        SkillPanel.SetActive(false);
         panelCheck = false;
-
     }
 
     void Update()
@@ -33,9 +30,7 @@ public class WindowOfTreeSelection : MonoBehaviour
         {
             if (panelCheck == false)
             {
-
-                
-                PanelFullScreen.SetActive(true);
+                SkillPanel.SetActive(true);
                 panelCheck = true;
             }
         }
@@ -89,14 +84,14 @@ public class WindowOfTreeSelection : MonoBehaviour
 
             {
             SkillPanel.SetActive(false);
-            background.SetActive(false);
-            backgroundFrame.SetActive(false);
+            //background.SetActive(false);
+            //backgroundFrame.SetActive(false);
         }
         else
            {
             SkillPanel.SetActive(true);
-            background.SetActive(true);
-            backgroundFrame.SetActive(true);
+           // background.SetActive(true);
+           // backgroundFrame.SetActive(true);
         }
     }
 

@@ -37,7 +37,7 @@ public class GridManager : MonoBehaviour
     public int StartIteration = 50;
     //public float DampFactor = 0.9f;
 
-    private MapGenerator mapGen;
+    public MapGenerator mapGen;
     
     void Awake()
     {
@@ -92,8 +92,8 @@ public class GridManager : MonoBehaviour
             TypeToDiffuse[typeof(SaltLevels)].FullDiffuse();
         }
 
-        mapGen = GameObject.Find("/Map").GetComponent<MapGenerator>();
-        mapGen.updateMap(true);
+        //mapGen = GameObject.Find("/Map").GetComponent<MapGenerator>();
+        //mapGen.updateMap(true);
     }
 
     // Update is called once per frame

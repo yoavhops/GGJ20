@@ -9,22 +9,14 @@ public class PointManager : MonoBehaviour
     private int points = 0;
     private int score = 0;
 
-    private UnityEngine.UI.Text cptxt;
-    private UnityEngine.UI.Text scoretxt;
+    public UnityEngine.UI.Text cptxt;
+    public UnityEngine.UI.Text scoretxt;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         singleton = this;
-        cptxt = transform.Find("pntsTxt").GetComponent<UnityEngine.UI.Text>();
-        scoretxt = transform.Find("scoreTxt").GetComponent<UnityEngine.UI.Text>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void setPoints(int pnts)
     {

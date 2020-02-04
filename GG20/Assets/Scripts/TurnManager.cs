@@ -11,13 +11,13 @@ public class TurnManager : MonoBehaviour
     public float ZonamiTime = 0.6f;
     private float currentZonamiTime;
 
-    private MapGenerator mapGen;
+    public MapGenerator mapGen;
 
     void Start()
     {
         currentZonamiTime = ZonamiTime;
         currentTreeTime = TreeTime + TreeOffset;
-        mapGen = GameObject.Find("/Map").GetComponent<MapGenerator>();
+        //mapGen = GameObject.Find("/Map").GetComponent<MapGenerator>();
     }
     // Update is called once per frame
     void Update()
