@@ -267,6 +267,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 138115578, guid: b79bee176375b2c4db7e0b1c4af37a9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1290121181}
+    - target: {fileID: 687301271, guid: b79bee176375b2c4db7e0b1c4af37a9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1290121181}
+    - target: {fileID: 744816624, guid: b79bee176375b2c4db7e0b1c4af37a9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1290121181}
+    - target: {fileID: 860525731, guid: b79bee176375b2c4db7e0b1c4af37a9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1290121181}
+    - target: {fileID: 1128898773, guid: b79bee176375b2c4db7e0b1c4af37a9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1290121181}
+    - target: {fileID: 1128898773, guid: b79bee176375b2c4db7e0b1c4af37a9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setNutrientsMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640576032, guid: b79bee176375b2c4db7e0b1c4af37a9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1290121181}
+    - target: {fileID: 1640576032, guid: b79bee176375b2c4db7e0b1c4af37a9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: setHydrationMap
+      objectReference: {fileID: 0}
     - target: {fileID: 1004341913895308973, guid: b79bee176375b2c4db7e0b1c4af37a9b,
         type: 3}
       propertyPath: m_Name
