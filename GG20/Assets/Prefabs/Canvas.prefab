@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914242102924}
   - {fileID: 1004341914300887491}
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913315053968}
   - {fileID: 1004341914571913565}
@@ -1537,7 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914859324677}
   isLocked: 1
@@ -2108,7 +2108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913918103848}
   - {fileID: 1004341914080348254}
@@ -2267,7 +2267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913377283980}
   isLocked: 1
@@ -2502,7 +2502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914715736435}
   isLocked: 1
@@ -2737,7 +2737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914591735597}
   isLocked: 0
@@ -2895,7 +2895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913987039705}
   isLocked: 1
@@ -3053,7 +3053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914859324677}
   isLocked: 1
@@ -3211,7 +3211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914622508793}
   isLocked: 1
@@ -4089,7 +4089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913993581660}
   isLocked: 1
@@ -4247,7 +4247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341912787309649}
   - {fileID: 1004341914742971932}
@@ -4406,7 +4406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913483117873}
   - {fileID: 1004341912841950922}
@@ -4565,7 +4565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913159022762}
   isLocked: 1
@@ -5010,7 +5010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914461455160}
   isLocked: 1
@@ -5325,7 +5325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913991172454}
   isLocked: 1
@@ -5791,7 +5791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914766753855}
   isLocked: 1
@@ -6257,7 +6257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914559631597}
   isLocked: 1
@@ -6492,7 +6492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913991172454}
   isLocked: 1
@@ -6727,7 +6727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914390008464}
   isLocked: 1
@@ -7039,7 +7039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913991172454}
   isLocked: 1
@@ -7585,7 +7585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914289959431}
   isLocked: 1
@@ -7743,7 +7743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913980560793}
   isLocked: 1
@@ -8058,7 +8058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914591735597}
   isLocked: 1
@@ -8447,7 +8447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913980560793}
   isLocked: 0
@@ -8605,7 +8605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341914559631597}
   isLocked: 1
@@ -8763,7 +8763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913377755270}
   isLocked: 1
@@ -8921,7 +8921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47d011da303473408982b7705358299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillState: 0
+  skillState: 1
   requiredSkills:
   - {fileID: 1004341913943375071}
   isLocked: 1

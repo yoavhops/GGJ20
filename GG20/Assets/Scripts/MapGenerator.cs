@@ -217,6 +217,10 @@ public class MapGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (tileList == null)
+        {
+            return;
+        }
         //UpdateTile
         for (int x = 0; x < tileList.Count; x++)
         {

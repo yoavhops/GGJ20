@@ -31,25 +31,37 @@ public class Skill : MonoBehaviour
 
     private Tree _treeDiffuse;
 
-    private bool isLearned = false;
     public int Price;
-
-    public bool IsLearned { get { return isLearned; } }
 
     private Image skillImage; 
 
-    private void handleStatus()
+    private void CheckStateStatus()
     {
+        if(skillState == SkillState.Learned)
+        {
+            return;
+        }
+
+        if (DoesUserRequiredSkills())
+        {
+            OnAvailable();
+            return;
+        }
+
+        skillState = SkillState.Locked;
+        SyncColor();
+    }
+
+    private void Awake()
+    {
+        skillImage = GetComponent<Image>();
 
     }
 
     private void Start()
     {
-        skillState = SkillState.Locked;
-        skillImage = GetComponent<Image>();
-
-        skillImage.color = ColorSkillSetting.singleton.colorLocked;
-
+        CheckStateStatus();
+        SyncColor();
         _treeDiffuse = (Tree)GridManager.Singleton.TypeToDiffuse[typeof(Tree)];
     }
 
@@ -59,18 +71,17 @@ public class Skill : MonoBehaviour
         if(skillState == SkillState.Locked)
         {
            if( DoesUserRequiredSkills())
-            {
+           {
                 OnAvailable();
-            }
+           }
         }
 
     }
 
     public void OnClick()
     {
-        if (!isLearned)
+        if (skillState != SkillState.Learned)
         {
-
             if (skillState == SkillState.Available)
             {
                 if (DoesUserHaveEnoughPoints())
@@ -89,11 +100,10 @@ public class Skill : MonoBehaviour
     {
         skillState = SkillState.Learned;
 
-        isLearned = true;
         PointManager.singleton.addPoints(-Price);
         Debug.Log("Learned SKILL!");
 
-        skillImage.color = ColorSkillSetting.singleton.colorLearned;
+        SyncColor();
 
         FireSkillEffects();
 
@@ -116,8 +126,23 @@ public class Skill : MonoBehaviour
     {
         skillState = SkillState.Available;
         Debug.Log("Available SKILL!");
-        skillImage.color = ColorSkillSetting.singleton.colorAvailable;
+        SyncColor();
+    }
 
+    private void SyncColor()
+    {
+        switch (skillState)
+        {
+            case SkillState.Available:
+                skillImage.color = ColorSkillSetting.singleton.colorAvailable;
+                break;
+            case SkillState.Learned:
+                skillImage.color = ColorSkillSetting.singleton.colorLearned;
+                break;
+            case SkillState.Locked:
+                skillImage.color = ColorSkillSetting.singleton.colorLocked;
+                break;
+        }
     }
 
     private bool DoesUserRequiredSkills()
@@ -125,7 +150,7 @@ public class Skill : MonoBehaviour
 
         for (int i = 0; i < requiredSkills.Count; i++)
         {
-            if (!requiredSkills[i].IsLearned)
+            if (requiredSkills[i].skillState != SkillState.Learned)
             {
                 return false;
             }
