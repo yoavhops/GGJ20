@@ -13,14 +13,14 @@ public class WindowOfTreeSelection : MonoBehaviour
     {
         panelCheck = false;
 
-        Button btn = skillTree.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+        //Button btn = skillTree.GetComponent<Button>();
+        //btn.onClick.AddListener(TaskOnClick);
     }
 
     private void DisablePanel()
     {
-        SkillPanel.SetActive(false);
-        panelCheck = false;
+        //SkillPanel.SetActive(false);
+       // panelCheck = false;
     }
 
     void Update()
