@@ -45,7 +45,7 @@ public class TurnManager : MonoBehaviour
         }
 
 
-        mapGen.updateMap(false);
+        mapGen.updateMap();
 
     }
 }

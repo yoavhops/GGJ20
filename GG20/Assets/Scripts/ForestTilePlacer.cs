@@ -25,7 +25,7 @@ public class ForestTilePlacer : MonoBehaviour
             {
                 RaycastHit hit = hits[i];
                 hitGO = hit.transform.gameObject;
-                transform.position = new Vector3(hitGO.transform.position.x, hitGO.transform.lossyScale.y, hitGO.transform.position.z);
+                transform.position = new Vector3(hitGO.transform.position.x, hitGO.transform.position.y + hitGO.transform.lossyScale.y, hitGO.transform.position.z);
             }
         }
 

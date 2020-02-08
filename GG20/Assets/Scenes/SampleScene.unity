@@ -571,6 +571,27 @@ PrefabInstance:
       propertyPath: skillState
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4479494168273218789, guid: b79bee176375b2c4db7e0b1c4af37a9b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644535672446965427, guid: b79bee176375b2c4db7e0b1c4af37a9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995586287684088482, guid: b79bee176375b2c4db7e0b1c4af37a9b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 155a64e0348594b49b21f4793fb0401c,
+        type: 3}
+    - target: {fileID: 7995586287684088482, guid: b79bee176375b2c4db7e0b1c4af37a9b,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b79bee176375b2c4db7e0b1c4af37a9b, type: 3}
 --- !u!1 &414291040
@@ -930,6 +951,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ForestTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892026083123557879, guid: 088472b6e719a954cb180f2081540e20,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6892026083123557881, guid: 088472b6e719a954cb180f2081540e20,
         type: 3}

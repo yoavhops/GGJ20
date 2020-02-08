@@ -19,6 +19,8 @@ public class MapGenerator : MonoBehaviour
 
     private List<List<Tile>> tileList = null;
 
+    private bool isHeightSet = false;
+
     private int currMap = 1;
 
 
@@ -71,35 +73,40 @@ public class MapGenerator : MonoBehaviour
     private void changeSource(int src)
     {
         currMap = src;
-        updateMap(false);
+        updateMap();
     }
 
-    public void updateMap(bool setHeight)
+    public void updateMap()
     {
         updateLists();
         if (currMap == 0)
         {
-            setTiles(heightMap, heightMap, heightPosClr, heightNegClr, 0, setHeight);
+            setTiles(heightMap, heightMap, heightPosClr, heightNegClr, 0, !isHeightSet);
         }
         else if (currMap == 1)
         {
-            setTiles(heightMap, treeCityMap, treePosClr, treeNegClr, 2, setHeight);
+            setTiles(heightMap, treeCityMap, treePosClr, treeNegClr, 2, !isHeightSet);
         }
         else if (currMap == 2)
         {
-            setTiles(heightMap, saltMap, saltPosClr, saltNegClr, 1, setHeight);
+            setTiles(heightMap, saltMap, saltPosClr, saltNegClr, 1, !isHeightSet);
         }
         else if (currMap == 3)
         {
-            setTiles(heightMap, temperatureMap, temperaturePosClr, temperatureNegClr, 1, setHeight);
+            setTiles(heightMap, temperatureMap, temperaturePosClr, temperatureNegClr, 1, !isHeightSet);
         }
         else if (currMap == 4)
         {
-            setTiles(heightMap, nutrientsMap, nutrientsPosClr, nutrientsNegClr, 1, setHeight);
+            setTiles(heightMap, nutrientsMap, nutrientsPosClr, nutrientsNegClr, 1, !isHeightSet);
         }
         else if (currMap == 5)
         {
-            setTiles(heightMap, hydrationMap, hydrationPosClr, hydrationNegClr, 1, setHeight);
+            setTiles(heightMap, hydrationMap, hydrationPosClr, hydrationNegClr, 1, !isHeightSet);
+        }
+
+        if (!isHeightSet)
+        {
+            isHeightSet = true;
         }
     }
 
@@ -134,7 +141,7 @@ public class MapGenerator : MonoBehaviour
                     {
                         //Debug.Log("POINT POP AT: " + x + "," + y);
                         GameObject carbonPointObj = Instantiate(carbonPoint);
-                        carbonPointObj.transform.position = new Vector3(currTile.transform.position.x, currTile.transform.lossyScale.y, currTile.transform.position.z);
+                        carbonPointObj.transform.position = new Vector3(currTile.transform.position.x, currTile.transform.position.y + currTile.transform.lossyScale.y, currTile.transform.position.z);
 
                     }
                 }
